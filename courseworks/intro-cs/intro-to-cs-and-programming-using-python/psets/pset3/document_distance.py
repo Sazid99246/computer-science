@@ -139,7 +139,24 @@ def get_most_frequent_words(freq_dict1, freq_dict2):
     If multiple words are tied (i.e. share the same highest frequency),
     return an alphabetically ordered list of all these words.
     """
-    pass
+    combined = {}
+
+    for key in freq_dict1.keys():
+        combined[key] = freq_dict1[key]
+
+    for key in freq_dict2.keys():
+        if key in combined.keys():
+            combined[key] += freq_dict2[key]
+        else:
+            combined[key] = freq_dict2[key]
+
+    max_values = max(combined.values())
+
+    result = []
+    for key in combined:
+        if combined[key] == max_values:
+            result.append(key)
+    return result
 
 
 ### Problem 5: Finding TF-IDF ###
@@ -154,7 +171,15 @@ def get_tf(file_path):
         in the document) / (total number of words in the document)
     * Think about how we can use get_frequencies from earlier
     """
-    pass
+    loader = load_file(file_path)
+    textList = text_to_list(loader)
+    frequency_list = get_frequencies(textList)
+
+    tf = {}
+    for word in frequency_list:
+        tf[word] = frequency_list[word] / len(textList)
+    return tf
+
 
 def get_idf(file_paths):
     """
@@ -168,7 +193,27 @@ def get_idf(file_paths):
     with math.log10()
 
     """
-    pass
+    total_docs = len(file_paths)
+    word_doc_count = {}
+
+    for file in file_paths:
+        text = load_file(file)
+        words = text_to_list(text)
+
+        unique_words = set(words)
+
+        for word in unique_words:
+            if word in word_doc_count:
+                word_doc_count[word] += 1
+            else:
+                word_doc_count[word] = 1
+
+    idf = {}
+    for word in word_doc_count:
+        idf[word] = math.log10(total_docs / word_doc_count[word])
+
+    return idf
+
 
 def get_tfidf(tf_file_path, idf_file_paths):
     """
@@ -183,7 +228,16 @@ def get_tfidf(tf_file_path, idf_file_paths):
 
         * TF-IDF(i) = TF(i) * IDF(i)
         """
-    pass
+    tf = get_tf(tf_file_path)
+    idf = get_idf(idf_file_paths)
+    tfidf_list = []
+    for word in tf:
+        tfidf_value = tf[word] * idf[word]
+        tfidf_list.append((word, tfidf_value))
+
+    tfidf_list.sort(key=lambda x: (x[1], x[0]))
+
+    return tfidf_list
 
 
 if __name__ == "__main__":
