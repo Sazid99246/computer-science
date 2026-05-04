@@ -101,7 +101,21 @@ def calculate_similarity_score(freq_dict1, freq_dict2):
          all frequencies in both dict1 and dict2.
         Return 1-(DIFF/ALL) rounded to 2 decimal places
     """
-    pass
+    all_keys = set(freq_dict1.keys()) | set(freq_dict2.keys())
+
+    diff = 0
+    total = 0
+
+    for key in all_keys:
+        freq1 = freq_dict1.get(key, 0)
+        freq2 = freq_dict2.get(key, 0)
+
+        diff += abs(freq1 - freq2)
+        total += freq1 + freq2
+
+    similarity = 1 - (diff / total)
+
+    return round(similarity, 2)
 
 
 ### Problem 4: Most Frequent Word(s) ###
