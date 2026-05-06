@@ -73,7 +73,7 @@ class TestPS4BC(unittest.TestCase):
         for plaintext, text in zip((self.ptmsg1, self.ptmsg2, self.ptmsg3, self.ptmsg4),
                     (self.text1, self.text2, self.text3, self.text4)):
             self.assertEqual(text, plaintext.get_text(), f"The PlaintextMessage({text})'s get_text() returns {plaintext.get_text()} not {text}. Are you calling the super constructor?")
-    
+
     def test_plaintext_message_generate_pad(self):
         self.setUpPlaintext()
         plaintexts = ((self.ptmsg4, [108, 49, 97, 53, 5, 33, 65, 62]),
@@ -181,7 +181,7 @@ class TestPS4BC(unittest.TestCase):
                 exp_msg, result_msg, f"decrypt_message_try_pads returned the correct pad and {result_msg} as the decrypted story when {exp_msg} was expected")
 
         enc = student.EncryptedMessage("bad")
-        result_plaintextMessage = studentc.decrypt_message_try_pads(enc, 
+        result_plaintextMessage = studentc.decrypt_message_try_pads(enc,
             [[2, 3, 4], [1, 2, 3]])
         result_pad = result_plaintextMessage.get_pad()
         result_msg = result_plaintextMessage.get_text()
