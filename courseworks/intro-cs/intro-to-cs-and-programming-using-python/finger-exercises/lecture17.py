@@ -1,4 +1,4 @@
-class Circle():
+class Circle(object):
     def __init__(self, radius):
         """ Initializes self with radius """
         self.radius = radius
