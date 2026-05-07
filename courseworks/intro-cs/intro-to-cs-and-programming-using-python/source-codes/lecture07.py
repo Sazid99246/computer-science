@@ -1,8 +1,8 @@
 ###########################
-#### EXAMPLE: applying functions to repeat same task many times
+# EXAMPLE: applying functions to repeat same task many times
 ###########################
-#A very simple example of a function that has one
-#argument and returns one value
+# A very simple example of a function that has one
+# argument and returns one value
 def is_even(i):
     """Assumes: i, a positive int
     Returns True if i is even, otherwise False"""
@@ -13,7 +13,6 @@ def is_even(i):
 
 # print(is_even(3)) # <- prints False
 # print(is_even(8)) # <- prints True
-
 
 
 ############## YOU TRY IT ###################
@@ -43,15 +42,14 @@ def div_by(n, d):
 #         print(i, "odd")
 
 
-
 ###########################
-### EXAMPLE: sum of all odd numbers between (including) a and b
+# EXAMPLE: sum of all odd numbers between (including) a and b
 ###########################
-## with a for loop
+# with a for loop
 def sum_odd(a, b):
     sum_of_odds = 0
     for i in range(a, b+1):
-        if i%2 == 0:
+        if i % 2 == 0:
             sum_of_odds += i
             print(i, sum_of_odds)
     return sum_of_odds
@@ -60,11 +58,13 @@ def sum_odd(a, b):
 # print(sum_odd(2,7))
 
 # # with a while loop
+
+
 def sum_odd(a, b):
     sum_of_odds = 0
     i = a
     while i <= b:
-        if i%2 == 1:
+        if i % 2 == 1:
             sum_of_odds += i
         i += 1
     return sum_of_odds
@@ -93,6 +93,8 @@ def is_palindrome(s):
 ################ YOU TRY IT AT HOME #####################
 ################################################
 # 1. Write code that satisfies the following specs:
+
+
 def keep_consonants(word):
     """ word is a string of lowercase letters
         Returns a string containing only the consonants
@@ -109,7 +111,6 @@ def keep_consonants(word):
 # print(keep_consonants("abcd"))  # prints bcd
 # print(keep_consonants("aaa"))  # prints an empty string
 # print(keep_consonants("babas"))  # prints bbs
-
 
 
 # 2. Write code that satisfies the following specs:
@@ -130,6 +131,7 @@ def first_to_last_diff(s, c):
         return indexes[len(indexes) - 1] - indexes[0]
     else:
         return -1
+
 
 # For example
 print(first_to_last_diff('aaaa', 'a'))  # prints 3
@@ -212,12 +214,12 @@ def first_to_last_diff(s, c):
         return -1
     # if reach here, c is in s
     for i in range(len(s)):
-        if s[i]==c:
+        if s[i] == c:
             # break here to save i as the first instance of c in s
             break
     # loop through s backwards
-    for j in range(len(s)-1,-1,-1):
-        if s[j]==c:
+    for j in range(len(s)-1, -1, -1):
+        if s[j] == c:
             # break here to save j as the last instance of c in s
             break
     # this return is ok becasue the loops iterated through indices not chars of s

@@ -25,8 +25,8 @@
 #############################################
 
 ####################
-## EXAMPLE: looping over characters
-## These 3 code snippets do the same thing
+# EXAMPLE: looping over characters
+# These 3 code snippets do the same thing
 ####################
 
 # s = "demo loops - fruit loops"
@@ -51,7 +51,7 @@
 
 #
 ####################
-## EXAMPLE:  robot cheerleaders
+# EXAMPLE:  robot cheerleaders
 ####################
 # an_letters = "aefhilmnorsxAEFHILMNORSX"
 # word = input("I will cheer for you! Enter a word: ")
@@ -85,10 +85,8 @@
 ##############################################
 
 
-
-
 ####################
-## EXAMPLE: guessing perfect square roots
+# EXAMPLE: guessing perfect square roots
 ####################
 
 # x = int(input("Enter an integer: "))
@@ -101,9 +99,8 @@
 #     print(f'{x} is not a perfect square')
 
 
-
 ####################
-## EXAMPLE:  square root with negative flag
+# EXAMPLE:  square root with negative flag
 ####################
 # guess = 0
 # neg_flag = False
@@ -118,7 +115,6 @@
 #     print(f'{x} is not a perfect square')
 #     if neg_flag:
 #         print(f'Just checking... did you mean {-x} ?')
-
 
 
 ################ YOU TRY IT ##################
@@ -155,7 +151,7 @@
 ####################################################
 
 ####################
-## EXAMPLE:  cube root
+# EXAMPLE:  cube root
 ####################
 
 # # finding a perfect cube of positive numbers
@@ -163,7 +159,6 @@
 # for guess in range(cube+1):
 #     if guess**3 == cube:
 #         print(f'Cube root of {cube} is {guess}')
-
 
 
 # finding perfect cube with negative numbers
@@ -175,8 +170,7 @@
 #         print(f'Cube root of {str(cube)} is {str(guess)}')
 
 
-
-## finding cube root with error message
+# finding cube root with error message
 # cube = int(input("Enter an integer: "))
 # for guess in range(abs(cube)+1):
 #     if guess**3 >= abs(cube):
@@ -215,7 +209,6 @@
 #         print(f'Cindy sold {cindy} tickets')
 
 
-
 ###################
 # EXAMPLE: floating point
 ###################
@@ -227,11 +220,11 @@
 
 
 ###################
-## EXAMPLE: Convert to binary
-## use Python Tutor to go step-by-step: http://pythontutor.com/
+# EXAMPLE: Convert to binary
+# use Python Tutor to go step-by-step: http://pythontutor.com/
 ###################
 
-## Only positive numbers
+# Only positive numbers
 # num = 1507
 # result = ''
 # if num == 0:
@@ -240,7 +233,7 @@
 #     result = str(num%2) + result
 #     num = num//2
 
-## Can handle negative numbers
+# Can handle negative numbers
 # num = -15
 # if num < 0:
 #     is_neg = True
@@ -257,9 +250,8 @@
 #     result = '-' + result
 
 
-
 #############
-## EXAMPLE
+# EXAMPLE
 # protip: use Python Tutor to go step-by-step: http://pythontutor.com/
 #############
 
@@ -287,7 +279,7 @@
 
 
 #################
-## EXAMPLE: successive addition
+# EXAMPLE: successive addition
 #################
 
 # x = 0
@@ -297,13 +289,12 @@
 
 #######
 
-#x = 0
-#for i in range(10):
+# x = 0
+# for i in range(10):
 #    x += 0.1
-#print(x == 1)
+# print(x == 1)
 #
-#print(x, '==', 10*0.1)
-
+# print(x, '==', 10*0.1)
 
 
 ####################################################
@@ -328,7 +319,6 @@
 ####################################################
 ##################### END AT HOME ######################
 ######################################################
-
 
 
 ########################################################
@@ -385,7 +375,6 @@
 #     if char not in seen:
 #         seen += char
 # print(len(seen))
-
 
 
 # You Try It 3:

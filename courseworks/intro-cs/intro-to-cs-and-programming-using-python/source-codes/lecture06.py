@@ -22,7 +22,7 @@
 
 
 #####################
-## EXAMPLE: fast square root using bisection search
+# EXAMPLE: fast square root using bisection search
 #####################
 
 # x = 54321  # try 0.5
@@ -43,7 +43,6 @@
 #     num_guesses += 1
 # print(f'num_guesses = {str(num_guesses)}')
 # print(f'{str(guess)} is close to square root of {str(x)}')
-
 
 
 ############### YOU TRY IT ###################
@@ -69,26 +68,26 @@
 
 
 #####################
-## Code for square root with all x values
+# Code for square root with all x values
 #####################
-#x = 0.5
-#epsilon = 0.01
-#if x >= 1:
+# x = 0.5
+# epsilon = 0.01
+# if x >= 1:
 #    low = 1.0
 #    high = x
-#else:
+# else:
 #    low = x
 #    high = 1.0
-#guess = (high + low)/2
+# guess = (high + low)/2
 #
-#while abs(guess**2 - x) >= epsilon:
+# while abs(guess**2 - x) >= epsilon:
 #    print(f'low = {str(low)} high {str(high)} guess = {str(guess)}')
 #    if guess**2 < x:
 #        low = guess
 #    else:
 #        high = guess
 #    guess = (high + low)/2.0
-#print(f'{str(guess)} is close to square root of {str(x)}')
+# print(f'{str(guess)} is close to square root of {str(x)}')
 
 
 ################# YOU TRY IT #######################
@@ -103,7 +102,7 @@ high = cube
 # your code here
 guess = (high + low)/2.0
 while abs(guess**3 - cube) >= epsilon:
-    if guess**3 < cube :
+    if guess**3 < cube:
         low = guess
     else:
         high = guess
@@ -138,7 +137,7 @@ print(guess, 'is close to the cube root of', cube)
 
 
 ########################
-## EXAMPLE: Newton-Raphson to find roots
+# EXAMPLE: Newton-Raphson to find roots
 ######################
 # epsilon = 0.01
 # k = 24  # try 54321

@@ -732,5 +732,3 @@ Congratulations, you won!
 Your total score for this game is: 55
 
 =============================================================
-
-

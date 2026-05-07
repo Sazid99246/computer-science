@@ -13,7 +13,7 @@ s = "abc"
 s[0]
 s[1]
 s[2]
-#s[3]  # this is an error
+# s[3]  # this is an error
 s[-1]
 s[-2]
 s[-3]
@@ -28,7 +28,7 @@ s[4:1:-2]
 
 ## TYPE THIS IN THE CONSOLE - MANIPULATION ##
 s = "car"
-#s[0] = 'b'  # this is an error
+# s[0] = 'b'  # this is an error
 s = 'b'+s[1:len(s)]
 
 #########################################
@@ -204,7 +204,6 @@ s = 'b'+s[1:len(s)]
 #########################################
 
 
-
 #########################################
 ############### AT HOME ###################
 #########################################
@@ -238,7 +237,6 @@ s = 'b'+s[1:len(s)]
 # else:
 #     answer += "\ny is smaller"
 # print(answer)
-
 
 
 # Practice 4: Uncomment the code below and:

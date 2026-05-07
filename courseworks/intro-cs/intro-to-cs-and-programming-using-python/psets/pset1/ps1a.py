@@ -1,14 +1,15 @@
-## 6.100A PSet 1: Part A
-## Name:
-## Time Spent:
-## Collaborators:
+# 6.100A PSet 1: Part A
+# Name:
+# Time Spent:
+# Collaborators:
 
 ##################################################################################
 ## Get user input for yearly_salary, portion_saved and cost_of_dream_home below ##
 ##################################################################################
 
 yearly_salary = float(input("Enter your yearly salary: "))
-portion_saved = float(input("Enter the percent of your salary to save, as a decimal: "))
+portion_saved = float(
+    input("Enter the percent of your salary to save, as a decimal: "))
 cost_of_dream_home = float(input("Enter the cost of your dream house: "))
 
 #########################################################################

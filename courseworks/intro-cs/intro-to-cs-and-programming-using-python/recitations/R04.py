@@ -3,20 +3,20 @@
 # passed in as an argument
 # INSERT CODE BELOW HERE
 
-f1 = lambda x: x ** (1/3)
+def f1(x): return x ** (1/3)
 
 # b) Write a lambda function that takes in two arguments and outputs the product
 # of those two numbers.
 # INSERT CODE BELOW HERE
 
-f2 = lambda x, y: x * y
+
+def f2(x, y): return x * y
 
 # uncomment to test function
 # print(f1(8))
 # print(f1(4))
 # print(f2(1,2))
 # print(f2(4,5))
-
 
 
 #############################################################################

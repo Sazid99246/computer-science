@@ -11,9 +11,10 @@ def new_dict(input_dict):
         result_dict[d] = v + 5
     return result_dict
 
-input_dict = {"item1": 2, "item2": 7, "item3": 20}
-print(new_dict({"item1": 2, "item2": 7, "item3": 20})) # expect {"item1": 7, "item2": 12, "item3": 25}
 
+input_dict = {"item1": 2, "item2": 7, "item3": 20}
+# expect {"item1": 7, "item2": 12, "item3": 25}
+print(new_dict({"item1": 2, "item2": 7, "item3": 20}))
 
 
 # Problem 2:
@@ -30,12 +31,12 @@ def check_same_values(input_dict):
             return False
     return True
 
+
 # testing
 input_dict = {'item1': 'apple', 'item2': 'apple', 'item3': 'apple'}
 print(check_same_values(input_dict))  # expect True
 input_dict = {'item1': 'apple', 'item2': 'apple', 'item3': 'orange'}
 print(check_same_values(input_dict))  # expect False
-
 
 
 # Problem 3:
@@ -51,10 +52,11 @@ def dict_to_sorted_list(input_dict):
         result.append([k, v])
     return sorted(result, key=lambda x: x[1], reverse=True)
 
+
 # testing
 input_dict = {'a': 1, 'b': 5, 'c': 10, 'd': 3, 'e': 2}
-print(dict_to_sorted_list(input_dict))  # expect: [['c', 10], ['b', 5], ['d', 3], ['e', 2], ['a', 1]]
-
+# expect: [['c', 10], ['b', 5], ['d', 3], ['e', 2], ['a', 1]]
+print(dict_to_sorted_list(input_dict))
 
 
 # Problem 4:
@@ -74,5 +76,6 @@ def combine_dicts(input_dicts):
 
 
 # testing
-input_dicts = [{'item': 'item1', 'amount': 400}, {'item': 'item2', 'amount': 300}, {'item': 'item1', 'amount': 750}]
+input_dicts = [{'item': 'item1', 'amount': 400}, {
+    'item': 'item2', 'amount': 300}, {'item': 'item1', 'amount': 750}]
 print(combine_dicts(input_dicts))  # expect {'item1': 1150, 'item2': 300}

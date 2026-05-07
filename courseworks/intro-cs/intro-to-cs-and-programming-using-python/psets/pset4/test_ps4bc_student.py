@@ -12,6 +12,8 @@ import ps4c as studentc
 # is a test you want to run on the student's code. For a full description
 # plus a list of all the possible assert methods you can use, see the
 # documentation: https://docs.python.org/3/library/unittest.html#unittest.TestCase
+
+
 class TestPS4BC(unittest.TestCase):
 
     def setUp(self):
@@ -71,14 +73,17 @@ class TestPS4BC(unittest.TestCase):
     def test_plaintext_message_inheritance(self):
         self.setUpPlaintext()
         for plaintext, text in zip((self.ptmsg1, self.ptmsg2, self.ptmsg3, self.ptmsg4),
-                    (self.text1, self.text2, self.text3, self.text4)):
-            self.assertEqual(text, plaintext.get_text(), f"The PlaintextMessage({text})'s get_text() returns {plaintext.get_text()} not {text}. Are you calling the super constructor?")
+                                   (self.text1, self.text2, self.text3, self.text4)):
+            self.assertEqual(text, plaintext.get_text(
+            ), f"The PlaintextMessage({text})'s get_text() returns {plaintext.get_text()} not {text}. Are you calling the super constructor?")
 
     def test_plaintext_message_generate_pad(self):
         self.setUpPlaintext()
         plaintexts = ((self.ptmsg4, [108, 49, 97, 53, 5, 33, 65, 62]),
-                      (self.ptmsg3, [108, 49, 97, 53, 5, 33, 65, 62, 51, 100, 106, 38, 61]),
-                      (self.ptmsg2, [108, 49, 97, 53, 5, 33, 65, 62, 51, 100, 106, 38, 61, 45, 74, 27, 64, 17, 36, 17, 96, 12, 79, 102, 32, 68, 90, 103, 77, 18, 39, 12, 93, 9, 108, 87, 42, 60, 71, 12, 45]),
+                      (self.ptmsg3, [108, 49, 97, 53, 5,
+                       33, 65, 62, 51, 100, 106, 38, 61]),
+                      (self.ptmsg2, [108, 49, 97, 53, 5, 33, 65, 62, 51, 100, 106, 38, 61, 45, 74, 27, 64, 17, 36,
+                       17, 96, 12, 79, 102, 32, 68, 90, 103, 77, 18, 39, 12, 93, 9, 108, 87, 42, 60, 71, 12, 45]),
                       (self.ptmsg1, [108, 49, 97, 53, 5, 33, 65, 62, 51, 100, 106, 38, 61, 45, 74]))
 
         for p, exp in plaintexts:
@@ -109,7 +114,8 @@ class TestPS4BC(unittest.TestCase):
         random.seed(0)
         new_plaintext = student.PlaintextMessage('Testing generating pad!')
         result = new_plaintext.get_pad()
-        exp = [108, 49, 97, 53, 5, 33, 65, 62, 51, 100, 106, 38, 61, 45, 74, 27, 64, 17, 36, 17, 96, 12, 79]
+        exp = [108, 49, 97, 53, 5, 33, 65, 62, 51, 100, 106,
+               38, 61, 45, 74, 27, 64, 17, 36, 17, 96, 12, 79]
         self.assertEqual(
             exp, result, f"The randomly generated PlaintextMessage pad was {result} but {exp} was expected")
 
@@ -141,12 +147,14 @@ class TestPS4BC(unittest.TestCase):
         ptmsg_mutated = student.PlaintextMessage(self.text1, pad)
         repr_ptmsg_mutated = repr(ptmsg_mutated)
         pad[0] = -999
-        self.assertEqual(repr_ptmsg_mutated, repr(ptmsg_mutated), f'Mutating the pad used to initialize PlaintextMessage mutated the PlaintextMessage object. Did you save pad as a copy?')
+        self.assertEqual(repr_ptmsg_mutated, repr(
+            ptmsg_mutated), f'Mutating the pad used to initialize PlaintextMessage mutated the PlaintextMessage object. Did you save pad as a copy?')
 
     def test_encrypted_message_inheritance(self):
         for text in (self.text1, self.text2, self.text3, self.text4):
             encrypted = student.EncryptedMessage(text)
-            self.assertEqual(text, encrypted.get_text(), f"The EncryptedMessage({text})'s get_text() returns {encrypted.get_text()} not {text}. Are you calling the super constructor?")
+            self.assertEqual(text, encrypted.get_text(
+            ), f"The EncryptedMessage({text})'s get_text() returns {encrypted.get_text()} not {text}. Are you calling the super constructor?")
 
     def test_encrypted_message_decrypt(self):
         pds = (('Monoo#', [5, 10, 2, 3, 0, 2], 'Hello!'),
@@ -172,7 +180,8 @@ class TestPS4BC(unittest.TestCase):
                ('m]+h{eF&p.f\\eT]?Xb;K!{5', [[2, 48, 28, 94, 78, 42, 81, 58, 70, 78, 34, 47, 36, 47, 9, 39, 6, 45, 25, 82, 82, 49, 44], [11, 17, 9, 5, 71, 72, 35, 64, 44, 37, 59, 59, 80, 71, 59, 13, 86, 92, 44, 49, 38, 7, 15], [14, 60, 33, 28, 54, 63, 46, 46, 9, 73, 33, 25, 33, 87, 59, 69, 28, 92, 12, 22, 68, 40, 70], [25, 84, 33, 84, 91, 92, 68, 18, 80, 33, 86, 77, 93, 78, 74, 31, 68, 89, 49, 68, 12, 8, 18], [52, 52, 84, 23, 89, 81, 58, 71, 23, 31, 16, 27, 14, 11, 61, 91, 29, 32, 50, 37, 70, 59, 39], [3, 1, 91, 67, 74, 89, 76, 13, 64, 16, 90, 77, 7, 69, 12, 2, 73, 67, 15, 53, 47, 5, 94]], 'This has longer shifts#', [25, 84, 33, 84, 91, 92, 68, 18, 80, 33, 86, 77, 93, 78, 74, 31, 68, 89, 49, 68, 12, 8, 18]))
         for enc, pads, exp_msg, exp_pad in pds:
             enc_msg = student.EncryptedMessage(enc)
-            result_plaintextMessage = studentc.decrypt_message_try_pads(enc_msg, pads)
+            result_plaintextMessage = studentc.decrypt_message_try_pads(
+                enc_msg, pads)
             result_pad = result_plaintextMessage.get_pad()
             result_msg = result_plaintextMessage.get_text()
             self.assertEqual(
@@ -182,7 +191,7 @@ class TestPS4BC(unittest.TestCase):
 
         enc = student.EncryptedMessage("bad")
         result_plaintextMessage = studentc.decrypt_message_try_pads(enc,
-            [[2, 3, 4], [1, 2, 3]])
+                                                                    [[2, 3, 4], [1, 2, 3]])
         result_pad = result_plaintextMessage.get_pad()
         result_msg = result_plaintextMessage.get_text()
         self.assertEqual(

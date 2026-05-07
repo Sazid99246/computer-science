@@ -1,5 +1,5 @@
 #################
-## EXAMPLE: change value in a list and appending a value to a list
+# EXAMPLE: change value in a list and appending a value to a list
 ###############
 # L = [2, 4, 3]
 # print(L)
@@ -66,7 +66,7 @@ def remove_elem(L, e):
 #######################################
 
 #################
-## EXAMPLE: string-list ops
+# EXAMPLE: string-list ops
 #################
 # s = "I<3 cs and u?"
 # L = list(s)
@@ -108,7 +108,7 @@ def count_words(sen):
 
 
 ###################
-## EXAMPLE: sorting/reversing ops
+# EXAMPLE: sorting/reversing ops
 ##################
 # L=[9,6,0,3]
 # a = sorted(L)
@@ -142,7 +142,7 @@ def sort_words(sen):
 
 
 ##############
-## Loops over lists
+# Loops over lists
 ################
 def square_list(L):
     for i in range(len(L)):
@@ -156,9 +156,8 @@ def square_list(L):
 # print("after fcn call:",Lin)   # mutated L
 
 
-
 ##############
-## TRICKY EXAMPLE 1: append to L white iterating over range(L)
+# TRICKY EXAMPLE 1: append to L white iterating over range(L)
 ##############
 # L = [1,2,3,4]
 # for i in range(len(L)):
@@ -167,8 +166,8 @@ def square_list(L):
 
 
 ##############
-## TRICKY EXAMPLE 2: append to L while iterating over L
-## this leads to an infinite loop
+# TRICKY EXAMPLE 2: append to L while iterating over L
+# this leads to an infinite loop
 ##############
 # L = [1,2,3,4]
 # i = 0
@@ -177,7 +176,7 @@ def square_list(L):
 #     i += 1
 #     print(L)
 
-## extend a list
+# extend a list
 # L1 = [2,1,3]
 # L2 = [4,5,6]
 # L3 = L1 + L2
@@ -185,7 +184,7 @@ def square_list(L):
 # L2.extend([[0,2],[7,9]])
 
 ##############
-## TRICKY EXAMPLE 3: combining
+# TRICKY EXAMPLE 3: combining
 ##############
 # L = [1,2,3,4]
 # for e in L:
@@ -194,7 +193,7 @@ def square_list(L):
 
 
 ##############
-## Clear a list and check that it's the same object
+# Clear a list and check that it's the same object
 ################
 # L = [4,5,6]
 # print(L)
@@ -203,7 +202,7 @@ def square_list(L):
 # print(L)
 # print(id(L)) # same as 3 lines up, same object
 
-## vs.
+# vs.
 
 # L = [4,5,6]
 # print(L)
@@ -228,6 +227,7 @@ def make_ordered_list(n):
 
 # print(make_ordered_list(6))  # prints [0, 1, 2, 3, 4, 5, 6]
 
+
 def remove_elem(L, e):
     """
     L is a list
@@ -247,6 +247,7 @@ def remove_elem(L, e):
 # L = [1,2,2,2]
 # print(remove_elem(L, 0))    # prints [1,2,2,2]
 
+
 def count_words(s):
     """ s is a string representing a sentence
     Returns how many words are in s (i.e. a word is a
@@ -259,6 +260,7 @@ def count_words(s):
 
 # s = "I just took a DNA test turns out I'm 100% splitting strings"
 # print(count_words(s))   # prints 12
+
 
 def sort_words(s):
     """ s is a string representing a sentence
@@ -281,7 +283,7 @@ def sort_words(s):
 #######################################
 ############ AT HOME ###############
 #######################################
-## Question 1
+# Question 1
 # L1 = ['re']
 # L2 = ['mi']
 # L3 = ['do']
@@ -292,7 +294,7 @@ def sort_words(s):
 # L3.append(['fa', 'la'])
 # What's the value of L3 here?
 
-## Question 2
+# Question 2
 # L1 = ['bacon', 'eggs']
 # L2 = ['toast', 'jam']
 # brunch = L1
@@ -300,7 +302,7 @@ def sort_words(s):
 # brunch.extend(L2)
 # What's the value of brunch here?
 
-## Question 3.
+# Question 3.
 def apply_to_each(L, f):
     """ L is a list of numbers
         f is a list that takes in a number and returns a number
@@ -317,7 +319,6 @@ def apply_to_each(L, f):
 # test = [-7, 8, 5, -8, -3]
 # apply_to_each(test, abs)
 # print(test)   # prints [7, 8, 5, 8, 3]
-
 
 
 ########################################

@@ -1,7 +1,7 @@
-## 6.100A PSet 1: Part C
-## Name:
-## Time Spent:
-## Collaborators:
+# 6.100A PSet 1: Part C
+# Name:
+# Time Spent:
+# Collaborators:
 
 ##############################################
 ## Get user input for initial_deposit below ##

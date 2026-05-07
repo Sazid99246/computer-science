@@ -1,4 +1,4 @@
-def apply(criteria,n):
+def apply(criteria, n):
     """ criteria is a function that takes in a number and returns a Boolean
         n is an int
     Returns how many ints from 0 to n (inclusive) match the criteria
@@ -10,11 +10,13 @@ def apply(criteria,n):
             count += 1
     return count
 
+
 def is_even(x):
-    return x%2==0
+    return x % 2 == 0
+
 
 def is_5(x):
-    return x==5
+    return x == 5
 
 # print('apply with is_5:',apply(is_5,10))
 # print('apply with anon fcn:', apply(lambda x: x==5, 100))
@@ -42,12 +44,12 @@ def do_twice(n, fn):
 
 
 ###################
-### example with returning a tuple with many values
+# example with returning a tuple with many values
 ###################
 def quotient_and_remainder(x, y):
-      q = x // y
-      r = x % y
-      return (q, r)
+    q = x // y
+    r = x % y
+    return (q, r)
 
 # result = quotient_and_remainder(10,3)
 # print(result)
@@ -55,7 +57,6 @@ def quotient_and_remainder(x, y):
 # (quot, rem) = quotient_and_remainder(5,2)
 # print('quotient is:', quot)
 # print('remainder is:', rem)
-
 
 
 ############### YOU TRY IT #####################
@@ -87,7 +88,7 @@ def char_counts(s):
 
 
 ###################
-### example of variable number of arguments
+# example of variable number of arguments
 ###################
 def mean(*args):
     """
@@ -102,8 +103,10 @@ def mean(*args):
 # print(mean(1,2,3,4,5,6))
 # print(mean(6,0,9))
 
-## Compare above code with this one:
+# Compare above code with this one:
 # Note args vs *args and mean((6,0,9)) vs mean(6,0,9)
+
+
 def mean(args):
     tot = 0
     for a in args:
@@ -114,31 +117,32 @@ def mean(args):
 # print(mean((6,0,9)))
 
 ##################
-## EXAMPLE: sum element values in a list
+# EXAMPLE: sum element values in a list
 ##################
+
+
 def list_sum(L):
     total = 0
     for e in L:
         total += e
-    return(total)
+    return (total)
 
 # print(list_sum([1,3,5]))
 
 
 ###################
-## EXAMPLE: sum lengths of string elements
+# EXAMPLE: sum lengths of string elements
 ####################
 def len_sum(L):
     total = 0
     for s in L:
         total += len(s)
-    return(total)
+    return (total)
 
 # print(len_sum(['ab', 'def', 'g']))
 
 
 #################################################
-
 
 
 ################## YOU TRY IT ###################
@@ -163,6 +167,8 @@ def sum_and_prod(L):
 #############################################
 ################## ANSWERS TO YOU TRY IT ####################
 #############################################
+
+
 def char_counts(s):
     """ s is a string of lowercase chars
     Returns a tuple where the first value is the
@@ -190,8 +196,8 @@ def sum_and_prod(L):
     s, p = 0, 1
 
     for i in L:
-      s += i
-      p *= i
+        s += i
+        p *= i
     return (s, p)
 
 # print(sum_and_prod([1,2,3,4]))   # prints (10, 24)
@@ -211,7 +217,6 @@ def always_sunny(t1, t2):
     return (sun[0], first)
 
 # print(always_sunny(('cloudy' ), ('cold',)))  # returns what?
-
 
 
 def max_of_both(n, f1, f2):
@@ -271,13 +276,13 @@ def max_of_both(n, f1, f2):
 def sublist_sum(L):
     """ L is a list whose elements are lists with int elements
     Returns the sum of all int elements. """
-    ## One way by using the sum function over the sublist
+    # One way by using the sum function over the sublist
     tot = 0
     for subL in L:
         tot += sum(subL)
     return tot
-    ## Alternate way by nesting a for loop that
-    ## iterates over the sublist's int elements
+    # Alternate way by nesting a for loop that
+    # iterates over the sublist's int elements
     tot = 0
     for subL in L:
         for e in subL:

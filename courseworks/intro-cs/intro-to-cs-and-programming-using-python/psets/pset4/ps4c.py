@@ -3,9 +3,11 @@
 # Collaborators:
 
 import json
-import ps4b # Importing your work from Part B
+import ps4b  # Importing your work from Part B
 
 ### HELPER CODE ###
+
+
 def load_words(file_name):
     '''
     file_name (string): the name of the file containing
@@ -119,7 +121,6 @@ def decode_story():
     decoded_message = decrypt_message_try_pads(encrypted_story, pads)
 
     return decoded_message.get_text()
-
 
 
 if __name__ == '__main__':

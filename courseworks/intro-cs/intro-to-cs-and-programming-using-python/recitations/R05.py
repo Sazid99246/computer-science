@@ -6,10 +6,10 @@ def square_list(my_list):
         new_list.append(i**2)
     return new_list
 
+
 # test
 print(square_list([1, 2, 3, 4]))
 print(square_list([10, 12, 13]))
-
 
 
 # Problem 2: Write a Python program to concatenate element-wise
@@ -20,6 +20,7 @@ list2 = ['red', 'green', 'black', 'blue', 'white']
 list3 = ['100', '200', '300', '400', '500']
 # Expected output : ['0red100', '1green200', '2black300', '3blue400', '4white500']
 
+
 def concatenate_lists(list_a, list_b, list_c):
     new_list = []
     for i in range(len(list_a)):
@@ -27,10 +28,9 @@ def concatenate_lists(list_a, list_b, list_c):
         new_list.append(combined_output)
     return new_list
 
+
 # test
 print(concatenate_lists(list1, list2, list3))
-
-
 
 
 # Problem 3: Write a function to shift a given list to the right or left
@@ -46,6 +46,7 @@ print(concatenate_lists(list1, list2, list3))
 # edit this to be "right" or "left"
 direction = "right"
 
+
 def rotate_list(input_list, direction, shift):
     shift = shift % len(input_list)
     if direction == "right":
@@ -54,6 +55,7 @@ def rotate_list(input_list, direction, shift):
         return input_list[shift:] + input_list[:shift]
     else:
         return None
+
 
 # test
 input_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

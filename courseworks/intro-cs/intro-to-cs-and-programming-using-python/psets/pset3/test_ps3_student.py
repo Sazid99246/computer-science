@@ -29,58 +29,58 @@ a1 = ['from', 'time', 'to', 'time', 'this',
       'folly', 'of', 'excessive', 'melodramatic', 'expressions',
       'of', 'grief']
 a1_freq = {'from': 2, 'time': 2, 'to': 5, 'this': 1, 'submerged': 1,
-        'or': 1, 'latent': 1, 'theater': 1, 'in': 3, 'becomes': 1,
-        'almost': 1, 'overt': 1, 'it': 2, 'is': 3, 'close': 1,
-        'the': 10, 'surface': 2, 'hamlets': 1, 'pretense': 1, 'of': 7,
-        'madness': 1, 'antic': 1, 'disposition': 1, 'he': 3, 'puts': 1,
-        'on': 1, 'protect': 1, 'himself': 2, 'and': 5, 'prevent': 1,
-        'his': 3, 'antagonists': 1, 'plucking': 1, 'out': 2, 'heart': 1,
-        'mystery': 1, 'even': 1, 'closer': 1, 'when': 2, 'hamlet': 2,
-        'enters': 1, 'mothers': 1, 'room': 1, 'holds': 1, 'up': 1,
-        'side': 2, 'by': 2, 'pictures': 1, 'two': 1, 'kings': 1, 'old': 1,
-        'claudius': 1, 'proceeds': 1, 'describe': 1, 'for': 3, 'her': 1,
-        'true': 1, 'nature': 1, 'choice': 1, 'she': 1, 'has': 1, 'made': 1,
-        'presenting': 1, 'truth': 1, 'means': 1, 'a': 1, 'show': 1,
-        'similarly': 1, 'leaps': 1, 'into': 1, 'open': 1, 'grave': 1,
-        'at': 1, 'ophelias': 1, 'funeral': 1, 'ranting': 1, 'high': 1,
-        'heroic': 1, 'terms': 1, 'acting': 1, 'laertes': 1, 'perhaps': 1,
-        'as': 1, 'well': 1, 'folly': 1, 'excessive': 1, 'melodramatic': 1,
-        'expressions': 1, 'grief': 1}
+           'or': 1, 'latent': 1, 'theater': 1, 'in': 3, 'becomes': 1,
+           'almost': 1, 'overt': 1, 'it': 2, 'is': 3, 'close': 1,
+           'the': 10, 'surface': 2, 'hamlets': 1, 'pretense': 1, 'of': 7,
+           'madness': 1, 'antic': 1, 'disposition': 1, 'he': 3, 'puts': 1,
+           'on': 1, 'protect': 1, 'himself': 2, 'and': 5, 'prevent': 1,
+           'his': 3, 'antagonists': 1, 'plucking': 1, 'out': 2, 'heart': 1,
+           'mystery': 1, 'even': 1, 'closer': 1, 'when': 2, 'hamlet': 2,
+           'enters': 1, 'mothers': 1, 'room': 1, 'holds': 1, 'up': 1,
+           'side': 2, 'by': 2, 'pictures': 1, 'two': 1, 'kings': 1, 'old': 1,
+           'claudius': 1, 'proceeds': 1, 'describe': 1, 'for': 3, 'her': 1,
+           'true': 1, 'nature': 1, 'choice': 1, 'she': 1, 'has': 1, 'made': 1,
+           'presenting': 1, 'truth': 1, 'means': 1, 'a': 1, 'show': 1,
+           'similarly': 1, 'leaps': 1, 'into': 1, 'open': 1, 'grave': 1,
+           'at': 1, 'ophelias': 1, 'funeral': 1, 'ranting': 1, 'high': 1,
+           'heroic': 1, 'terms': 1, 'acting': 1, 'laertes': 1, 'perhaps': 1,
+           'as': 1, 'well': 1, 'folly': 1, 'excessive': 1, 'melodramatic': 1,
+           'expressions': 1, 'grief': 1}
 
 b1 = ['almost', 'all', 'of', 'shakespeares', 'hamlet', 'can', 'be',
-        'understood', 'as', 'a', 'play', 'about', 'acting', 'and', 'the',
-        'theater', 'for', 'example', 'there', 'is', 'hamlets', 'pretense',
-        'of', 'madness', 'the', 'antic', 'disposition', 'that', 'he',
-        'puts', 'on', 'to', 'protect', 'himself', 'and', 'prevent', 'his',
-        'antagonists', 'from', 'plucking', 'out', 'the', 'heart', 'of',
-        'his', 'mystery', 'when', 'hamlet', 'enters', 'his', 'mothers',
-        'room', 'he', 'holds', 'up', 'side', 'by', 'side', 'the', 'pictures',
-        'of', 'the', 'two', 'kings', 'old', 'hamlet', 'and', 'claudius',
-        'and', 'proceeds', 'to', 'describe', 'for', 'her', 'the', 'true',
-        'nature', 'of', 'the', 'choice', 'she', 'has', 'made', 'presenting',
-        'truth', 'by', 'means', 'of', 'a', 'show', 'similarly', 'when', 'he',
-        'leaps', 'into', 'the', 'open', 'grave', 'at', 'ophelias', 'funeral',
-        'ranting', 'in', 'high', 'heroic', 'terms', 'he', 'is', 'acting',
-        'out', 'for', 'laertes', 'and', 'perhaps', 'for', 'himself', 'as',
-        'well', 'the', 'folly', 'of', 'excessive', 'melodramatic',
-        'expressions', 'of', 'grief']
+      'understood', 'as', 'a', 'play', 'about', 'acting', 'and', 'the',
+      'theater', 'for', 'example', 'there', 'is', 'hamlets', 'pretense',
+      'of', 'madness', 'the', 'antic', 'disposition', 'that', 'he',
+      'puts', 'on', 'to', 'protect', 'himself', 'and', 'prevent', 'his',
+      'antagonists', 'from', 'plucking', 'out', 'the', 'heart', 'of',
+      'his', 'mystery', 'when', 'hamlet', 'enters', 'his', 'mothers',
+      'room', 'he', 'holds', 'up', 'side', 'by', 'side', 'the', 'pictures',
+      'of', 'the', 'two', 'kings', 'old', 'hamlet', 'and', 'claudius',
+      'and', 'proceeds', 'to', 'describe', 'for', 'her', 'the', 'true',
+      'nature', 'of', 'the', 'choice', 'she', 'has', 'made', 'presenting',
+      'truth', 'by', 'means', 'of', 'a', 'show', 'similarly', 'when', 'he',
+      'leaps', 'into', 'the', 'open', 'grave', 'at', 'ophelias', 'funeral',
+      'ranting', 'in', 'high', 'heroic', 'terms', 'he', 'is', 'acting',
+      'out', 'for', 'laertes', 'and', 'perhaps', 'for', 'himself', 'as',
+      'well', 'the', 'folly', 'of', 'excessive', 'melodramatic',
+      'expressions', 'of', 'grief']
 b1_freq = {'almost': 1, 'all': 1, 'of': 8, 'shakespeares': 1, 'hamlet': 3,
-        'can': 1, 'be': 1, 'understood': 1, 'as': 2, 'a': 2, 'play': 1,
-        'about': 1, 'acting': 2, 'and': 5, 'the': 9, 'theater': 1, 'for': 4,
-        'example': 1, 'there': 1, 'is': 2, 'hamlets': 1, 'pretense': 1,
-        'madness': 1, 'antic': 1, 'disposition': 1, 'that': 1, 'he': 4,
-        'puts': 1, 'on': 1, 'to': 2, 'protect': 1, 'himself': 2, 'prevent': 1,
-        'his': 3, 'antagonists': 1, 'from': 1, 'plucking': 1, 'out': 2,
-        'heart': 1, 'mystery': 1, 'when': 2, 'enters': 1, 'mothers': 1,
-        'room': 1, 'holds': 1, 'up': 1, 'side': 2, 'by': 2, 'pictures': 1,
-        'two': 1, 'kings': 1, 'old': 1, 'claudius': 1, 'proceeds': 1,
-        'describe': 1, 'her': 1, 'true': 1, 'nature': 1, 'choice': 1,
-        'she': 1, 'has': 1, 'made': 1, 'presenting': 1, 'truth': 1,
-        'means': 1, 'show': 1, 'similarly': 1, 'leaps': 1, 'into': 1,
-        'open': 1, 'grave': 1, 'at': 1, 'ophelias': 1, 'funeral': 1,
-        'ranting': 1, 'in': 1, 'high': 1, 'heroic': 1, 'terms': 1,
-        'laertes': 1, 'perhaps': 1, 'well': 1, 'folly': 1, 'excessive': 1,
-        'melodramatic': 1, 'expressions': 1, 'grief': 1}
+           'can': 1, 'be': 1, 'understood': 1, 'as': 2, 'a': 2, 'play': 1,
+           'about': 1, 'acting': 2, 'and': 5, 'the': 9, 'theater': 1, 'for': 4,
+           'example': 1, 'there': 1, 'is': 2, 'hamlets': 1, 'pretense': 1,
+           'madness': 1, 'antic': 1, 'disposition': 1, 'that': 1, 'he': 4,
+           'puts': 1, 'on': 1, 'to': 2, 'protect': 1, 'himself': 2, 'prevent': 1,
+           'his': 3, 'antagonists': 1, 'from': 1, 'plucking': 1, 'out': 2,
+           'heart': 1, 'mystery': 1, 'when': 2, 'enters': 1, 'mothers': 1,
+           'room': 1, 'holds': 1, 'up': 1, 'side': 2, 'by': 2, 'pictures': 1,
+           'two': 1, 'kings': 1, 'old': 1, 'claudius': 1, 'proceeds': 1,
+           'describe': 1, 'her': 1, 'true': 1, 'nature': 1, 'choice': 1,
+           'she': 1, 'has': 1, 'made': 1, 'presenting': 1, 'truth': 1,
+           'means': 1, 'show': 1, 'similarly': 1, 'leaps': 1, 'into': 1,
+           'open': 1, 'grave': 1, 'at': 1, 'ophelias': 1, 'funeral': 1,
+           'ranting': 1, 'in': 1, 'high': 1, 'heroic': 1, 'terms': 1,
+           'laertes': 1, 'perhaps': 1, 'well': 1, 'folly': 1, 'excessive': 1,
+           'melodramatic': 1, 'expressions': 1, 'grief': 1}
 
 tf2_dict = {'from': 0.015151515151515152, 'time': 0.015151515151515152, 'to': 0.03787878787878788,
             'this': 0.007575757575757576, 'submerged': 0.007575757575757576, 'or': 0.007575757575757576,
@@ -166,15 +166,19 @@ tfidf_list = [('and', 0.0), ('as', 0.0), ('the', 0.0), ('to', 0.0), ('a', 0.0007
               ('ranting', 0.0016806723455784576), ('room', 0.0016806723455784576),
               ('similarly', 0.0016806723455784576), ('terms', 0.0016806723455784576),
               ('up', 0.0016806723455784576), ('well', 0.0016806723455784576),
-              ('for', 0.002202500295637646), ('he', 0.002202500295637646), ('his', 0.002202500295637646),
-              ('in', 0.002202500295637646), ('is', 0.002202500295637646), ('becomes', 0.0030146970353942242),
+              ('for', 0.002202500295637646), ('he',
+                                              0.002202500295637646), ('his', 0.002202500295637646),
+              ('in', 0.002202500295637646), ('is',
+                                             0.002202500295637646), ('becomes', 0.0030146970353942242),
               ('close', 0.0030146970353942242), ('closer', 0.0030146970353942242),
               ('latent', 0.0030146970353942242), ('or', 0.0030146970353942242),
               ('overt', 0.0030146970353942242), ('submerged', 0.0030146970353942242),
               ('this', 0.0030146970353942242), ('by', 0.003361344691156915),
               ('from', 0.003361344691156915), ('himself', 0.003361344691156915),
-              ('it', 0.003361344691156915), ('out', 0.003361344691156915), ('side', 0.003361344691156915),
+              ('it', 0.003361344691156915), ('out',
+                                             0.003361344691156915), ('side', 0.003361344691156915),
               ('of', 0.00513916735648784), ('surface', 0.0060293940707884484), ('time', 0.0060293940707884484)]
+
 
 def load_text(filename):
     """
@@ -190,18 +194,23 @@ def load_text(filename):
         return line.lower()
 
 # Helper function to retrieve filepaths; ripped from https://stackoverflow.com/questions/9816816/get-absolute-paths-of-all-files-in-a-directory
+
+
 def absolute_file_paths(directory):
-    filepaths=[]
-    for dirpath,_,filenames in os.walk(directory):
+    filepaths = []
+    for dirpath, _, filenames in os.walk(directory):
         for f in filenames:
             filepaths.append(os.path.abspath(os.path.join(dirpath, f)))
     return filepaths
 
 # Test shell
+
+
 class TestPrepData(unittest.TestCase):
     def test_prep_hello_world(self):
         expected = ["hello", "world", "hello"]
-        result = ds.text_to_list(load_text("tests/student_tests/hello_world.txt"))
+        result = ds.text_to_list(
+            load_text("tests/student_tests/hello_world.txt"))
         self.assertEqual(result, expected)
 
     def test_prep_1a(self):
@@ -215,6 +224,7 @@ class TestPrepData(unittest.TestCase):
         result = ds.text_to_list(test_input)
         self.assertEqual(result, expected)
 
+
 class TestWordFrequency(unittest.TestCase):
     def load_text(self, filename):
         """
@@ -226,7 +236,7 @@ class TestWordFrequency(unittest.TestCase):
         inFile = open(filename, 'r', encoding='ascii', errors='ignore')
         line = inFile.read()
         for char in string.punctuation:
-             line = line.replace(char, "")
+            line = line.replace(char, "")
         inFile.close()
         return line.lower()
 
@@ -237,25 +247,25 @@ class TestWordFrequency(unittest.TestCase):
         self.assertDictEqual(result, expected)
 
     def test_frequency_hello_world(self):
-         text = load_text("tests/student_tests/hello_world.txt")
-         data = ["hello", "world", "hello"]
-         result = ds.get_frequencies(data)
-         expected = {"hello":2, "world":1}
-         self.assertDictEqual(result, expected)
+        text = load_text("tests/student_tests/hello_world.txt")
+        data = ["hello", "world", "hello"]
+        result = ds.get_frequencies(data)
+        expected = {"hello": 2, "world": 1}
+        self.assertDictEqual(result, expected)
 
     def test_frequency_1a(self):
-         text = load_text("tests/student_tests/test1a.txt")
-         data = a1
-         result = ds.get_frequencies(data)
-         expected = a1_freq
-         self.assertDictEqual(result, expected)
+        text = load_text("tests/student_tests/test1a.txt")
+        data = a1
+        result = ds.get_frequencies(data)
+        expected = a1_freq
+        self.assertDictEqual(result, expected)
 
     def test_frequency_1b(self):
-         text = load_text("tests/student_tests/test1b.txt")
-         data = b1
-         result = ds.get_frequencies(data)
-         expected = b1_freq
-         self.assertDictEqual(result, expected)
+        text = load_text("tests/student_tests/test1b.txt")
+        data = b1
+        result = ds.get_frequencies(data)
+        expected = b1_freq
+        self.assertDictEqual(result, expected)
 
 
 class TestLetterFrequency(unittest.TestCase):
@@ -268,55 +278,56 @@ class TestLetterFrequency(unittest.TestCase):
     def test_letter_frequency_4(self):
         word = "supercalifragilisticexpialidocious"
         result = ds.get_letter_frequencies(word)
-        expected = {'s': 3, 'u': 2, 'p': 2, 'e': 2, 'r': 2, 'c': 3, 'a': 3, 'l': 3, 'i': 7, 'f': 1, 'g': 1, 't': 1, 'x': 1, 'd': 1, 'o': 2}
+        expected = {'s': 3, 'u': 2, 'p': 2, 'e': 2, 'r': 2, 'c': 3, 'a': 3,
+                    'l': 3, 'i': 7, 'f': 1, 'g': 1, 't': 1, 'x': 1, 'd': 1, 'o': 2}
         self.assertDictEqual(result, expected)
 
 
 class TestSimilarity(unittest.TestCase):
     def test_similarity_words1(self):
-         f1 = {"hello":2, "world":1}
-         f2 = {"hello":2, "world":1}
-         result = ds.calculate_similarity_score(f1, f2)
-         expected = 1
-         self.assertEqual(result, expected)
+        f1 = {"hello": 2, "world": 1}
+        f2 = {"hello": 2, "world": 1}
+        result = ds.calculate_similarity_score(f1, f2)
+        expected = 1
+        self.assertEqual(result, expected)
 
     def test_similarity_words2(self):
-         f1 = {}
-         f2 = {"hello":1}
-         result = ds.calculate_similarity_score(f1, f2)
-         expected = 0
-         self.assertEqual(result, expected)
+        f1 = {}
+        f2 = {"hello": 1}
+        result = ds.calculate_similarity_score(f1, f2)
+        expected = 0
+        self.assertEqual(result, expected)
 
     def test_similarity_words3(self):
-         f1 = {"hello":2, "world":1}
-         f2 = {"hello":2, "friends":1}
-         result = ds.calculate_similarity_score(f1, f2)
-         expected = .67
-         self.assertEqual(round(result,2), expected)
+        f1 = {"hello": 2, "world": 1}
+        f2 = {"hello": 2, "friends": 1}
+        result = ds.calculate_similarity_score(f1, f2)
+        expected = .67
+        self.assertEqual(round(result, 2), expected)
 
     def test_similarity_words4(self):
-         f1 = {'from': 2, 'time': 2, 'to': 5, 'this': 1, 'submerged': 1, 'or': 1,
-                 'latent': 1, 'theater': 1, 'in': 3, 'becomes': 1, 'almost': 1,
-                 'overt': 1, 'it': 2, 'is': 3, 'close': 1, 'the': 10, 'surface': 2,
-                 'hamlets': 1, 'pretense': 1, 'of': 7, 'madness': 1, 'antic': 1,
-                 'disposition': 1, 'he': 3, 'puts': 1, 'on': 1, 'protect': 1,
-                 'himself': 2, 'and': 5, 'prevent': 1, 'his': 3, 'antagonists': 1,
-                 'plucking': 1, 'out': 2, 'heart': 1, 'mystery': 1, 'even': 1, 'closer': 1,
-                 'when': 2, 'hamlet': 2, 'enters': 1, 'mothers': 1, 'room': 1, 'holds': 1,
-                 'up': 1, 'side': 2, 'by': 2, 'pictures': 1, 'two': 1, 'kings': 1, 'old': 1,
-                 'claudius': 1, 'proceeds': 1, 'describe': 1, 'for': 3, 'her': 1, 'true': 1,
-                 'nature': 1, 'choice': 1, 'she': 1, 'has': 1, 'made': 1, 'presenting': 1,
-                 'truth': 1, 'means': 1, 'a': 1, 'show': 1, 'similarly': 1, 'leaps': 1,
-                 'into': 1, 'open': 1, 'grave': 1, 'at': 1, 'ophelias': 1, 'funeral': 1,
-                 'ranting': 1, 'high': 1, 'heroic': 1, 'terms': 1, 'acting': 1, 'laertes': 1,
-                 'perhaps': 1, 'as': 1, 'well': 1, 'folly': 1, 'excessive': 1,
-                 'melodramatic': 1, 'expressions': 1, 'grief': 1}
-         f2 = {'to': 2, 'thine': 1, 'own': 1, 'self': 1, 'be': 2, 'true': 1, 'and': 1, 'it': 1,
-                 'must': 1, 'follow': 1, 'as': 1, 'the': 2, 'night': 1, 'day': 1, 'thou': 1,
-                 'canst': 1, 'not': 1, 'then': 1, 'false': 1, 'any': 1, 'man': 1}
-         result = ds.calculate_similarity_score(f1, f2)
-         expected = 0.1
-         self.assertEqual(round(result,2), expected)
+        f1 = {'from': 2, 'time': 2, 'to': 5, 'this': 1, 'submerged': 1, 'or': 1,
+              'latent': 1, 'theater': 1, 'in': 3, 'becomes': 1, 'almost': 1,
+              'overt': 1, 'it': 2, 'is': 3, 'close': 1, 'the': 10, 'surface': 2,
+              'hamlets': 1, 'pretense': 1, 'of': 7, 'madness': 1, 'antic': 1,
+              'disposition': 1, 'he': 3, 'puts': 1, 'on': 1, 'protect': 1,
+              'himself': 2, 'and': 5, 'prevent': 1, 'his': 3, 'antagonists': 1,
+              'plucking': 1, 'out': 2, 'heart': 1, 'mystery': 1, 'even': 1, 'closer': 1,
+              'when': 2, 'hamlet': 2, 'enters': 1, 'mothers': 1, 'room': 1, 'holds': 1,
+              'up': 1, 'side': 2, 'by': 2, 'pictures': 1, 'two': 1, 'kings': 1, 'old': 1,
+              'claudius': 1, 'proceeds': 1, 'describe': 1, 'for': 3, 'her': 1, 'true': 1,
+              'nature': 1, 'choice': 1, 'she': 1, 'has': 1, 'made': 1, 'presenting': 1,
+              'truth': 1, 'means': 1, 'a': 1, 'show': 1, 'similarly': 1, 'leaps': 1,
+              'into': 1, 'open': 1, 'grave': 1, 'at': 1, 'ophelias': 1, 'funeral': 1,
+              'ranting': 1, 'high': 1, 'heroic': 1, 'terms': 1, 'acting': 1, 'laertes': 1,
+              'perhaps': 1, 'as': 1, 'well': 1, 'folly': 1, 'excessive': 1,
+              'melodramatic': 1, 'expressions': 1, 'grief': 1}
+        f2 = {'to': 2, 'thine': 1, 'own': 1, 'self': 1, 'be': 2, 'true': 1, 'and': 1, 'it': 1,
+              'must': 1, 'follow': 1, 'as': 1, 'the': 2, 'night': 1, 'day': 1, 'thou': 1,
+              'canst': 1, 'not': 1, 'then': 1, 'false': 1, 'any': 1, 'man': 1}
+        result = ds.calculate_similarity_score(f1, f2)
+        expected = 0.1
+        self.assertEqual(round(result, 2), expected)
 
     def test_similarity_letters_1(self):
         d1 = ds.get_letter_frequencies("hello")
@@ -335,15 +346,15 @@ class TestSimilarity(unittest.TestCase):
 
 class TestGetFrequentWords(unittest.TestCase):
     def test_words1(self):
-        f1 = {"hello":1, "world":2}
-        f2 = {"hello":1, "world":5}
+        f1 = {"hello": 1, "world": 2}
+        f2 = {"hello": 1, "world": 5}
         result = ds.get_most_frequent_words(f1, f2)
         expected = ['world']
         self.assertListEqual(result, expected)
 
     def test_words2(self):
-        f1 = {"hello":5, "world":1}
-        f2 = {"hello":1, "world":5}
+        f1 = {"hello": 5, "world": 1}
+        f2 = {"hello": 1, "world": 5}
         result = ds.get_most_frequent_words(f1, f2)
         expected = ['hello', 'world']
         self.assertListEqual(result, expected)
@@ -364,7 +375,8 @@ class TestTFIDF(unittest.TestCase):
             if isinstance(value, dict):
                 self.assertDictAlmostEqual(d1[key], d2[key], msg=msg)
             else:
-                self.assertAlmostEqual(d1[key], d2[key], places=places, msg=msg)
+                self.assertAlmostEqual(
+                    d1[key], d2[key], places=places, msg=msg)
 
     # Helper function to check if two lists are equal within a range; ripped from https://stackoverflow.com/questions/8311202/python-assert-for-lists-of-floats
     def assertListAlmostEqual(self, list1, list2, places=7):
@@ -385,27 +397,32 @@ class TestTFIDF(unittest.TestCase):
         self.assertDictAlmostEqual(result, expected)
 
     def test_idf1(self):
-        text_files = ['tests/student_tests/hello_world.txt', 'tests/student_tests/hello_friends.txt']
+        text_files = ['tests/student_tests/hello_world.txt',
+                      'tests/student_tests/hello_friends.txt']
         result = ds.get_idf(text_files)
-        expected = {'hello': 0.0, 'world': 0.3010299956639812, 'friends': 0.3010299956639812}
+        expected = {'hello': 0.0, 'world': 0.3010299956639812,
+                    'friends': 0.3010299956639812}
         self.assertDictAlmostEqual(result, expected)
 
     def test_idf2(self):
-        text_files = ['tests/student_tests/test1a.txt', 'tests/student_tests/test1b.txt']
+        text_files = ['tests/student_tests/test1a.txt',
+                      'tests/student_tests/test1b.txt']
         result = ds.get_idf(text_files)
         expected = idf2_dict
         self.assertDictAlmostEqual(result, expected)
 
     def test_tfidf_small(self):
         text_file = 'tests/student_tests/hello_world.txt'
-        text_files = ['tests/student_tests/hello_world.txt', 'tests/student_tests/hello_friends.txt']
+        text_files = ['tests/student_tests/hello_world.txt',
+                      'tests/student_tests/hello_friends.txt']
         result = ds.get_tfidf(text_file, text_files)
         expected = [('hello', 0.0), ('world', 0.10034333188799373)]
         self.assertListAlmostEqual(result, expected)
 
     def test_tfidf_big(self):
         text_file = 'tests/student_tests/test1a.txt'
-        text_files = ['tests/student_tests/test1a.txt', 'tests/student_tests/test1b.txt', 'tests/student_tests/test2a.txt', 'tests/student_tests/test2b.txt', 'tests/student_tests/test3a.txt']
+        text_files = ['tests/student_tests/test1a.txt', 'tests/student_tests/test1b.txt',
+                      'tests/student_tests/test2a.txt', 'tests/student_tests/test2b.txt', 'tests/student_tests/test3a.txt']
         result = ds.get_tfidf(text_file, text_files)
         expected = tfidf_list
         self.assertListAlmostEqual(result, expected)
@@ -414,30 +431,30 @@ class TestTFIDF(unittest.TestCase):
 # Dictionary mapping function names from the above TestCase class to
 # the point value each test is worth. Make sure these add up to 5!
 point_values = {
-        'test_prep_hello_world': .05,
-        'test_prep_all_whitespace': .05,
-        'test_prep_1a': .1,
-        'test_frequency_word_hello' : .2,
-        'test_frequency_hello_world' : .2,
-        'test_frequency_1a' : .2,
-        'test_frequency_1b': .2,
-        'test_letter_frequency_1': .2,
-        'test_letter_frequency_4': .2,
-        'test_similarity_words1': .2,
-        'test_similarity_words2': .2,
-        'test_similarity_words3': .2,
-        'test_similarity_words4': .2,
-        'test_similarity_letters_1': .2,
-        'test_similarity_letters_2': .2,
-        'test_words1': .3,
-        'test_words2': .3,
-        'test_tf1': .2,
-        'test_tf2': .2,
-        'test_idf1': .5,
-        'test_idf2': .5,
-        'test_tfidf_small': .2,
-        'test_tfidf_big': .2
-    }
+    'test_prep_hello_world': .05,
+    'test_prep_all_whitespace': .05,
+    'test_prep_1a': .1,
+    'test_frequency_word_hello': .2,
+    'test_frequency_hello_world': .2,
+    'test_frequency_1a': .2,
+    'test_frequency_1b': .2,
+    'test_letter_frequency_1': .2,
+    'test_letter_frequency_4': .2,
+    'test_similarity_words1': .2,
+    'test_similarity_words2': .2,
+    'test_similarity_words3': .2,
+    'test_similarity_words4': .2,
+    'test_similarity_letters_1': .2,
+    'test_similarity_letters_2': .2,
+    'test_words1': .3,
+    'test_words2': .3,
+    'test_tf1': .2,
+    'test_tf2': .2,
+    'test_idf1': .5,
+    'test_idf2': .5,
+    'test_tfidf_small': .2,
+    'test_tfidf_big': .2
+}
 
 # Dictionary mapping function names from the above TestCase class to
 # messages you'd like the student to see if the test fails.
@@ -445,9 +462,9 @@ failure_messages = {
     'test_prep_hello_world': 'Your text_to_list function generated an incorrect list to represent hello_world.txt',
     'test_prep_all_whitespace': 'Your function generated an incorrect list that strips all whitespace.',
     'test_prep_1a': 'Your text_to_list function generated an incorrect list to represent test1a.txt',
-    'test_frequency_word_hello' : 'Your get_frequencies function generated the incorrect frequency dictionary for "hello"',
-    'test_frequency_hello_world' : 'Your get_frequencies function generated the incorrect frequency dictionary for hello_world.txt',
-    'test_frequency_1a' : 'Your get_frequencies function generated the incorrect frequency dictionary for test1a',
+    'test_frequency_word_hello': 'Your get_frequencies function generated the incorrect frequency dictionary for "hello"',
+    'test_frequency_hello_world': 'Your get_frequencies function generated the incorrect frequency dictionary for hello_world.txt',
+    'test_frequency_1a': 'Your get_frequencies function generated the incorrect frequency dictionary for test1a',
     'test_frequency_1b':  'Your get_frequencies function generated the incorrect frequency dictionary for test1b',
     'test_letter_frequency_1': 'Your get_letter_frequencies function generated the incorrect frequency dictionary for a word with a single letter',
     'test_letter_frequency_4': 'Your get_letter_frequencies function generated the incorrect frequency dictionary for a word with repeated letters',
@@ -473,9 +490,9 @@ error_messages = {
     'test_prep_hello_world': 'Your text_to_list function generated an error while preparing hello_world.txt',
     'test_prep_all_whitespace': 'Your function generated an error while preparing a string with multiple types of whitespace.',
     'test_prep_1a': 'Your text_to_list function generated an error while preparing test1a.txt',
-    'test_frequency_word_hello' : 'Your get_frequencies function produced an error while generating a frequency dictionary for "hello"',
-    'test_frequency_hello_world' : 'Your get_frequencies function produced an error while generating a frequency dictionary for hello_world.txt',
-    'test_frequency_1a' : 'Your get_frequencies function produced an error while generating a frequency dictionary for 1a',
+    'test_frequency_word_hello': 'Your get_frequencies function produced an error while generating a frequency dictionary for "hello"',
+    'test_frequency_hello_world': 'Your get_frequencies function produced an error while generating a frequency dictionary for hello_world.txt',
+    'test_frequency_1a': 'Your get_frequencies function produced an error while generating a frequency dictionary for 1a',
     'test_frequency_1b':  'Your get_frequencies function produced an error while generating a frequency dictionary for 1b',
     'test_letter_frequency_1': 'Your get_letter_frequencies function produced an error while generating a frequency dictionary for a word with a single letter',
     'test_letter_frequency_4': 'Your get_letter_frequencies function produced an error while generating a frequency dictionary for a word with repeated letters',
@@ -497,6 +514,8 @@ error_messages = {
 
 # Subclass to track a point score and appropriate
 # grade comment for a suit of unit tests
+
+
 class Results_600(unittest.TextTestResult):
 
     # We override the init method so that the Result object
@@ -520,6 +539,7 @@ class Results_600(unittest.TextTestResult):
         point_value = point_values[test_name]
         self.output.append('[-%s]: %s' % (point_value, messages))
         self.points -= point_value
+
     def getOutput(self):
         if len(self.output) == 0:
             return "All correct!"
@@ -528,16 +548,21 @@ class Results_600(unittest.TextTestResult):
     def getPoints(self):
         return round(self.points, 3)
 
+
 if __name__ == '__main__':
 
     suite = unittest.TestSuite()
     suite.addTest(unittest.TestLoader().loadTestsFromTestCase(TestPrepData))
-    suite.addTest(unittest.TestLoader().loadTestsFromTestCase(TestWordFrequency))
-    suite.addTest(unittest.TestLoader().loadTestsFromTestCase(TestLetterFrequency))
-    suite.addTest(unittest.TestLoader().loadTestsFromTestCase(TestGetFrequentWords))
+    suite.addTest(unittest.TestLoader(
+    ).loadTestsFromTestCase(TestWordFrequency))
+    suite.addTest(unittest.TestLoader(
+    ).loadTestsFromTestCase(TestLetterFrequency))
+    suite.addTest(unittest.TestLoader(
+    ).loadTestsFromTestCase(TestGetFrequentWords))
     suite.addTest(unittest.TestLoader().loadTestsFromTestCase(TestSimilarity))
     suite.addTest(unittest.TestLoader().loadTestsFromTestCase(TestTFIDF))
-    result = unittest.TextTestRunner(verbosity=4, resultclass=Results_600).run(suite)
+    result = unittest.TextTestRunner(
+        verbosity=4, resultclass=Results_600).run(suite)
 
     output = result.getOutput()
     points = result.getPoints()

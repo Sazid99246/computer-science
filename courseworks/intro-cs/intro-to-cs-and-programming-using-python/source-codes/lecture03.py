@@ -7,7 +7,6 @@
 ###################
 
 
-
 ###################
 # EXAMPLE: while loops
 ####################
@@ -15,7 +14,6 @@
 # while where == "right":
 #     where = input("You are in the Lost Forest. Go left or right? ")
 # print("You got out of the Lost Forest! \o/")
-
 
 
 ###########################################
@@ -28,7 +26,7 @@
 
 
 ###########
-## EXAMPLE
+# EXAMPLE
 ###########
 # n = int(input('Please enter a non-negative integer: '))
 # while n > 0:
@@ -37,13 +35,12 @@
 
 
 ################ YOU TRY IT ###################
-## EXAMPLE: infinite loop, be careful!
+# EXAMPLE: infinite loop, be careful!
 # To stop it, click the shell and hit CTRL+c or
 # the red square at the top of the shell
 ##############################################
 # while True:
 #     print("noooooooo")
-
 
 
 ############### YOU TRY IT ################
@@ -60,26 +57,25 @@
 # print("You got out!")
 
 
-
 #############
-## EXAMPLE: counter
+# EXAMPLE: counter
 #############
 
-## With while loop
+# With while loop
 # n = 0
 # while n < 5:
 #     print(n)
 #     n = n+1
 
-## With for loop
-#for n in range(5):
+# With for loop
+# for n in range(5):
 #    print(n)
 
 ###########
-## EXAMPLE: factorial
+# EXAMPLE: factorial
 ###########
 
-## With while loops
+# With while loops
 # x = 6
 # i = 1
 # factorial = 1
@@ -88,7 +84,7 @@
 #     i += 1
 # print(f'{x} factorial is {factorial}')
 
-## With for loops
+# With for loops
 # factorial = 1
 # for i in range(1, x+1, 1):
 #     factorial *= i
@@ -107,20 +103,20 @@
 ###########################################
 
 ###############
-## EXAMPLE: sum
+# EXAMPLE: sum
 ###############
 
-#mysum = 0
-#for i in range(10):
+# mysum = 0
+# for i in range(10):
 #    mysum += i
-#print(mysum)
+# print(mysum)
 
 ######
 
-#mysum = 0
-#for i in range(7, 10):
+# mysum = 0
+# for i in range(7, 10):
 #    mysum += i
-#print(mysum)
+# print(mysum)
 
 ######
 
@@ -144,7 +140,6 @@
 # print(mysum)
 
 ###########################################
-
 
 
 #########################################################
@@ -215,8 +210,6 @@ print(sum)
 #########################################################
 
 
-
-
 #########################################
 ############### ANSWERS TO LECTURE ##########################
 #########################################
@@ -232,7 +225,6 @@ print(sum)
 #         print(":(")
 #     where = input("Go left or right? ")
 # print("You got out!")
-
 
 
 # Your Try It 2:

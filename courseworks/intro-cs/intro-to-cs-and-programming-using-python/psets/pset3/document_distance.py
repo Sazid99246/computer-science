@@ -12,7 +12,7 @@ import string
 import math
 
 
-### DO NOT MODIFY THIS FUNCTION
+# DO NOT MODIFY THIS FUNCTION
 def load_file(filename):
     """
     Args:
@@ -64,6 +64,8 @@ def get_frequencies(input_iterable):
     return freq
 
 ### Problem 2: Letter Frequencies ###
+
+
 def get_letter_frequencies(word):
     """
     Args:
@@ -246,14 +248,14 @@ if __name__ == "__main__":
     ## Uncomment the following lines to test your implementation ##
     ###############################################################
 
-    ## Tests Problem 0: Prep Data
+    # Tests Problem 0: Prep Data
     # test_directory = "tests/student_tests/"
     # hello_world, hello_friend = load_file(test_directory + 'hello_world.txt'), load_file(test_directory + 'hello_friends.txt')
     # world, friend = text_to_list(hello_world), text_to_list(hello_friend)
     # print(world)      # should print ['hello', 'world', 'hello']
     # print(friend)     # should print ['hello', 'friends']
 
-    ## Tests Problem 1: Get Frequencies
+    # Tests Problem 1: Get Frequencies
     # test_directory = "tests/student_tests/"
     # hello_world, hello_friend = load_file(test_directory + 'hello_world.txt'), load_file(test_directory + 'hello_friends.txt')
     # world, friend = text_to_list(hello_world), text_to_list(hello_friend)
@@ -262,13 +264,13 @@ if __name__ == "__main__":
     # print(world_word_freq)    # should print {'hello': 2, 'world': 1}
     # print(friend_word_freq)   # should print {'hello': 1, 'friends': 1}
 
-    ## Tests Problem 2: Get Letter Frequencies
+    # Tests Problem 2: Get Letter Frequencies
     # freq1 = get_letter_frequencies('hello')
     # freq2 = get_letter_frequencies('that')
     # print(freq1)      #  should print {'h': 1, 'e': 1, 'l': 2, 'o': 1}
     # print(freq2)      #  should print {'t': 2, 'h': 1, 'a': 1}
 
-    ## Tests Problem 3: Similarity
+    # Tests Problem 3: Similarity
     # test_directory = "tests/student_tests/"
     # hello_world, hello_friend = load_file(test_directory + 'hello_world.txt'), load_file(test_directory + 'hello_friends.txt')
     # world, friend = text_to_list(hello_world), text_to_list(hello_friend)
@@ -286,12 +288,12 @@ if __name__ == "__main__":
     # print(word_similarity3)       # should print 0.0
     # print(word_similarity4)       # should print 0.4
 
-    ## Tests Problem 4: Most Frequent Word(s)
+    # Tests Problem 4: Most Frequent Word(s)
     # freq_dict1, freq_dict2 = {"hello": 5, "world": 1}, {"hello": 1, "world": 5}
     # most_frequent = get_most_frequent_words(freq_dict1, freq_dict2)
     # print(most_frequent)      # should print ["hello", "world"]
 
-    ## Tests Problem 5: Find TF-IDF
+    # Tests Problem 5: Find TF-IDF
     # tf_text_file = 'tests/student_tests/hello_world.txt'
     # idf_text_files = ['tests/student_tests/hello_world.txt', 'tests/student_tests/hello_friends.txt']
     # tf = get_tf(tf_text_file)

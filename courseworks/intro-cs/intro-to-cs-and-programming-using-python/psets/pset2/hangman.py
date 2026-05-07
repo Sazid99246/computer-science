@@ -12,6 +12,7 @@ import string
 
 WORDLIST_FILENAME = "words.txt"
 
+
 def load_words():
     """
     returns: list, a list of valid words. Words are strings of lowercase letters.
@@ -29,6 +30,7 @@ def load_words():
     print(" ", len(wordlist), "words loaded.")
     return wordlist
 
+
 def choose_word(wordlist):
     """
     wordlist (list): list of words (strings)
@@ -45,6 +47,7 @@ def choose_word(wordlist):
 # Load the list of words to be accessed from anywhere in the program
 wordlist = load_words()
 
+
 def has_player_won(secret_word, letters_guessed):
     """
     secret_word: string, the lowercase word the user is guessing
@@ -55,9 +58,10 @@ def has_player_won(secret_word, letters_guessed):
         False otherwise
     """
     for letter in secret_word:
-      if letter not in letters_guessed:
-        return False
+        if letter not in letters_guessed:
+            return False
     return True
+
 
 def get_word_progress(secret_word, letters_guessed):
     """
@@ -71,10 +75,10 @@ def get_word_progress(secret_word, letters_guessed):
 
     resulted_str = ""
     for letter in secret_word:
-      if letter in letters_guessed:
-        resulted_str += letter
-      else:
-        resulted_str += "*"
+        if letter in letters_guessed:
+            resulted_str += letter
+        else:
+            resulted_str += "*"
     return resulted_str
 
 
@@ -90,9 +94,10 @@ def get_available_letters(letters_guessed):
 
     letters_remained = ""
     for letter in string.ascii_lowercase:
-      if letter not in letters_guessed:
-        letters_remained += letter
+        if letter not in letters_guessed:
+            letters_remained += letter
     return letters_remained
+
 
 def choose_revealed_letter(secret_word, available_letters):
     """
@@ -112,6 +117,7 @@ def choose_revealed_letter(secret_word, available_letters):
     revealed_letter = choose_from[new]
 
     return revealed_letter
+
 
 def hangman(secret_word, with_help):
     """
@@ -228,10 +234,8 @@ def hangman(secret_word, with_help):
     print(f"Sorry, you ran out of guesses. The word was {secret_word}.")
 
 
-
 # When you've completed your hangman function, scroll down to the bottom
 # of the file and uncomment the lines to test
-
 if __name__ == "__main__":
     # To test your game, uncomment the following three lines.
 

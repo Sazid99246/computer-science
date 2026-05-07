@@ -6,11 +6,11 @@ def all_true(n, Lf):
     """
     flag = True
     for f in Lf:
-      if not f(n):
-        flag = False
-        break
+        if not f(n):
+            flag = False
+            break
     return flag
 
 
 # Examples:
-print(all_true()) # prints 6
+print(all_true())  # prints 6

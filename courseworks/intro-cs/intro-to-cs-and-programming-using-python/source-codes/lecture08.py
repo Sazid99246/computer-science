@@ -1,7 +1,7 @@
 #########################
-## EXAMPLE: combinations of print and return
+# EXAMPLE: combinations of print and return
 #########################
-def is_even_with_return( i ):
+def is_even_with_return(i):
     """
     Input: i, a positive int
     Returns True if i is even, otherwise False
@@ -10,10 +10,11 @@ def is_even_with_return( i ):
     remainder = i % 2
     return remainder == 0
 
-#is_even_with_return(3)          # -> False
-#print(is_even_with_return(3))  # -> print(False)
+# is_even_with_return(3)          # -> False
+# print(is_even_with_return(3))  # -> print(False)
 
-def is_even_without_return( i ):
+
+def is_even_without_return(i):
     """
     Input: i, a positive int
     Returns None
@@ -22,19 +23,20 @@ def is_even_without_return( i ):
     remainder = i % 2
     has_rem = (remainder == 0)
     print(has_rem)
-    ##return None
+    # return None
 
-#is_even_without_return(3)          # -> None
-#print(is_even_without_return(3))  # -> print(None)
-
+# is_even_without_return(3)          # -> None
+# print(is_even_without_return(3))  # -> print(None)
 
 
 ############### YOU TRY IT #######################
 # What does this print to the console?
 # Think first, then run it.
-def add(x,y):
+def add(x, y):
     return x+y
-def mult(x,y):
+
+
+def mult(x, y):
     print(x*y)
 
 # add(1,2)
@@ -46,6 +48,8 @@ def mult(x,y):
 
 ############ YOU TRY IT ####################
 # Fix this buggy code so it works according to the specification:
+
+
 def is_triangular(n):
     """ n is an int > 0
         Returns True if n is triangular, i.e. equals a continued
@@ -66,9 +70,8 @@ def is_triangular(n):
 ##############################################
 
 
-
 #########################
-### EXAMPLE: bisection square root as a function
+# EXAMPLE: bisection square root as a function
 #########################
 def bisection_root(x):
     epsilon = 0.01
@@ -100,16 +103,15 @@ def count_nums_with_sqrt_close_to(n, epsilon):
             count += 1
     return count
 
-#print(count_nums_with_sqrt_close_to(10, 0.1))
+# print(count_nums_with_sqrt_close_to(10, 0.1))
 
 #############################################################
 
 
-
 #########################
-## Scope example: paste this into the Python Tutor
+# Scope example: paste this into the Python Tutor
 ########################
-def f( x ):
+def f(x):
     x = x + 1
     print('in f(x): x =', x)
     return x
@@ -119,7 +121,7 @@ def f( x ):
 
 
 ###########################
-#### EXAMPLE: shows accessing variables outside scope
+# EXAMPLE: shows accessing variables outside scope
 ###########################
 def f(y):
     x = 1
@@ -130,6 +132,7 @@ def f(y):
 # # f(x)
 # # print(x)
 
+
 def g(y):
     print(x)
     print(x+1)
@@ -138,8 +141,9 @@ def g(y):
 # # g(x)
 # # print(x)
 
+
 def h(y):
-    x += 1 #leads to an error without line `global x` inside h
+    x += 1  # leads to an error without line `global x` inside h
 
 # # x = 5
 # # h(x)
@@ -147,22 +151,26 @@ def h(y):
 
 
 #############
-## EXAMPLE: functions as parameters
-## Run it in the Python Tutor if something doesn't make sense
+# EXAMPLE: functions as parameters
+# Run it in the Python Tutor if something doesn't make sense
 ############
 def calc(op, x, y):
-    return op(x,y)
+    return op(x, y)
 
-def add(a,b):
+
+def add(a, b):
     return a+b
 
-def sub(a,b):
+
+def sub(a, b):
     return a-b
 
-def mult(a,b):
+
+def mult(a, b):
     return a*b
 
-def div(a,b):
+
+def div(a, b):
     if b != 0:
         return a/b
     print("Denominator was 0.")
@@ -170,12 +178,18 @@ def div(a,b):
 # print(calc(add, 2, 3))
 # print(calc(div, 2, 0))
 
-## trace the scope progression of this code
+# trace the scope progression of this code
+
+
 def func_a():
     print('inside func_a')
+
+
 def func_b(y):
     print('inside func_b')
     return y
+
+
 def func_c(f, z):
     print('inside func_c')
     return f(z)
@@ -186,7 +200,7 @@ def func_c(f, z):
 
 
 ############## YOU TRY IT ###############
-def apply(criteria,n):
+def apply(criteria, n):
     """ criteria is a function that takes in a number and returns a Boolean
         n is an int
     Returns how many ints from 0 to n (inclusive) match the criteria
@@ -203,11 +217,11 @@ def apply(criteria,n):
 
 
 def is_even(x):
-    return x%2==0
+    return x % 2 == 0
 
-how_many = apply(is_even,10)
+
+how_many = apply(is_even, 10)
 # print(how_many)
-
 
 
 ############## YOU TRY IT ###############
@@ -245,7 +259,6 @@ def max_of_both(n, f1, f2):
 ################################
 
 
-
 ###################################
 ############# ANSWERS TO YOU TRY IT #######################
 ###################################
@@ -263,7 +276,7 @@ def how_many_sqrt_close_to(n, epsilon):
 # print(how_many_sqrt_close_to(10, 0.1))
 
 
-def apply(criteria,n):
+def apply(criteria, n):
     """ criteria is a function that takes in a number and returns a Boolean
         n is an int
     Returns how many ints from 0 to n (inclusive) match the criteria
@@ -276,14 +289,13 @@ def apply(criteria,n):
             count += 1
     return count
 
+
 def is_even(x):
-    return x%2==0
+    return x % 2 == 0
 # what = apply(is_even,10)
 # print(what)
 
 # print(apply(lambda x: x==5, 100))
-
-
 
 
 ###################################
@@ -315,11 +327,15 @@ def f_yields_palindrome(n, f):
     return is_palindrome(str(f_on_n))
 
 # For example:
+
+
 def f(x):
     return x+1
 
+
 def g(x):
     return x*2
+
 
 def h(x):
     return x//2
@@ -332,7 +348,6 @@ def h(x):
 ###################################
 ##################################
 ###################################
-
 
 
 ###################################
@@ -357,7 +372,6 @@ def is_palindrome(s):
 # print(is_palindrome("abc"))   # prints False
 
 
-
 def f_yields_palindrome(n, f):
     """ n is a positive int
         f is a function that takes in an int and returns an int
@@ -368,11 +382,15 @@ def f_yields_palindrome(n, f):
     return is_palindrome(str(f_on_n))
 
 # For example:
+
+
 def f(x):
     return x+1
 
+
 def g(x):
     return x*2
+
 
 def h(x):
     return x//2

@@ -8,25 +8,30 @@ from unittest.mock import patch
 from unittest import TestCase
 import re
 import random
-#pulled from http://stackoverflow.com/questions/20567497/overwrite-built-in-function
-outputstr=""
+# pulled from http://stackoverflow.com/questions/20567497/overwrite-built-in-function
+outputstr = ""
+
+
 class MyStream(object):
     def __init__(self, target):
         self.target = target
 
     def write(self, s):
         global outputstr
-        outputstr+=s
-        #self.target.write(s)
+        outputstr += s
+        # self.target.write(s)
         return s
+
     def flush(self):
         pass
+
 
 WILDCARD = "!"
 HIDDEN = "*"
 
 store = sys.stdout
 sys.stdout = MyStream(sys.stdout)
+
 
 def Dprint(*args):
     """
@@ -41,15 +46,18 @@ def Dprint(*args):
 
 
 input_string = (letter for letter in ["h", "e", "i"])
+
+
 def make_input(self):
     return next(input_string)
+
 
 def output_to_file(test_case_name, word_to_guess, guessed_letters, student_output, correct_output):
     with open('run_game_test_results.txt', 'a+') as f:
         f.write("=============================================================\n")
-        f.write("RESULTS FOR TEST CASE: %s\n"%test_case_name)
-        f.write("WORD USED IN TEST: %s\n"%word_to_guess)
-        f.write("GUESSED LETTERS IN ORDER OF GUESS: %s\n"%guessed_letters)
+        f.write("RESULTS FOR TEST CASE: %s\n" % test_case_name)
+        f.write("WORD USED IN TEST: %s\n" % word_to_guess)
+        f.write("GUESSED LETTERS IN ORDER OF GUESS: %s\n" % guessed_letters)
         f.write('************************\n')
         f.write("YOUR OUTPUT:\n")
         f.write('************************\n')
@@ -60,12 +68,13 @@ def output_to_file(test_case_name, word_to_guess, guessed_letters, student_outpu
         f.write(correct_output+'\n')
         f.write("=============================================================\n\n\n")
 
+
 def compare_results(expected, actual):
     '''
     Used for comparing equality of student answers with staff answers
     '''
-    def almost_equal(x,y):
-        if x == y or x.replace(' ', '') == y.replace(' ',''):
+    def almost_equal(x, y):
+        if x == y or x.replace(' ', '') == y.replace(' ', ''):
             return True
         return False
 
@@ -83,57 +92,62 @@ class TestPS2(unittest.TestCase):
     # TODO Add HangmanOracle tests
 
     def test_has_player_won(self):
-        self.assertTrue(student.has_player_won('face', ['f','c','a','e']))
-        self.assertFalse(student.has_player_won('moves', ['o','c','a','v','e']))
+        self.assertTrue(student.has_player_won('face', ['f', 'c', 'a', 'e']))
+        self.assertFalse(student.has_player_won(
+            'moves', ['o', 'c', 'a', 'v', 'e']))
 
     def test_has_player_won_repeated_letters(self):
-        self.assertTrue(student.has_player_won('bass', ['a','s','b','e']),
-            "Failed with repeated letters")
-        self.assertFalse(student.has_player_won('rare', ['f','t','r','e']),
-            "Failed with repeated letters")
+        self.assertTrue(student.has_player_won('bass', ['a', 's', 'b', 'e']),
+                        "Failed with repeated letters")
+        self.assertFalse(student.has_player_won('rare', ['f', 't', 'r', 'e']),
+                         "Failed with repeated letters")
 
     def test_has_player_won_empty_string(self):
-        self.assertTrue(student.has_player_won('', ['f','c','y','e']),
-            "Failed with the empty string")
+        self.assertTrue(student.has_player_won('', ['f', 'c', 'y', 'e']),
+                        "Failed with the empty string")
 
     def test_has_player_won_empty_list(self):
         self.assertFalse(student.has_player_won('code', []),
-            "Failed with the empty list")
+                         "Failed with the empty list")
 
     def test_get_word_progress(self):
-        self.assertTrue(compare_results(student.get_word_progress('face', ['f','c','a','e']), 'face'))
-        self.assertTrue(compare_results(student.get_word_progress('moves', ['o','c','a','v','e']), HIDDEN+'ove'+HIDDEN))
+        self.assertTrue(compare_results(student.get_word_progress(
+            'face', ['f', 'c', 'a', 'e']), 'face'))
+        self.assertTrue(compare_results(student.get_word_progress(
+            'moves', ['o', 'c', 'a', 'v', 'e']), HIDDEN+'ove'+HIDDEN))
 
     def test_get_word_progress_repeated_letters(self):
-        self.assertTrue(compare_results(student.get_word_progress('bass', ['a','s','b','e']), 'bass'),
-            "Failed with repeated letters")
-        self.assertTrue(compare_results(student.get_word_progress('rare', ['f','t','r','e']), 'r'+HIDDEN+'re'),
-            "Failed with repeated letters")
+        self.assertTrue(compare_results(student.get_word_progress('bass', ['a', 's', 'b', 'e']), 'bass'),
+                        "Failed with repeated letters")
+        self.assertTrue(compare_results(student.get_word_progress('rare', ['f', 't', 'r', 'e']), 'r'+HIDDEN+'re'),
+                        "Failed with repeated letters")
 
     def test_get_word_progress_empty_string(self):
-        self.assertTrue(compare_results(student.get_word_progress('', ['f','c','y','e']), ''),
-            "Failed with the empty string")
+        self.assertTrue(compare_results(student.get_word_progress('', ['f', 'c', 'y', 'e']), ''),
+                        "Failed with the empty string")
 
     def test_get_word_progress_empty_list(self):
         self.assertTrue(compare_results(student.get_word_progress('code', []), HIDDEN*4),
-            "Failed with the empty list")
+                        "Failed with the empty list")
 
     def test_get_available_letters(self):
-        self.assertEqual(student.get_available_letters(['a','b','c','d']), 'efghijklmnopqrstuvwxyz')
-        self.assertEqual(student.get_available_letters(['z','p','x','b', 'b']), 'acdefghijklmnoqrstuvwy')
-        self.assertEqual(student.get_available_letters(['a','u','i','o','w']), 'bcdefghjklmnpqrstvxyz')
+        self.assertEqual(student.get_available_letters(
+            ['a', 'b', 'c', 'd']), 'efghijklmnopqrstuvwxyz')
+        self.assertEqual(student.get_available_letters(
+            ['z', 'p', 'x', 'b', 'b']), 'acdefghijklmnoqrstuvwy')
+        self.assertEqual(student.get_available_letters(
+            ['a', 'u', 'i', 'o', 'w']), 'bcdefghjklmnpqrstvxyz')
 
     def test_get_available_letters_empty_string(self):
         self.assertEqual(student.get_available_letters(list(string.ascii_lowercase)), '',
-            "Failed to return the empty string")
+                         "Failed to return the empty string")
 
     def test_get_available_letters_empty_list(self):
         self.assertEqual(student.get_available_letters([]), 'abcdefghijklmnopqrstuvwxyz',
-            "Failed with the empty list")
-
+                         "Failed with the empty list")
 
     def test_play_game_short(self):
-        correct='''Welcome to Hangman!
+        correct = '''Welcome to Hangman!
 I am thinking of a word that is 2 letters long.
 ------
 You have 10 guesses left.
@@ -154,15 +168,15 @@ Good guess: hi
 Congratulations, you won!
 Your total score for this game is: 22'''
         with unittest.mock.patch('builtins.input',  make_input):
-            threw_exception =  False
+            threw_exception = False
             try:
                 student.hangman("hi", False)
             except:
                 threw_exception = True
             global outputstr
             student_output = outputstr[:]
-            lines = re.split('\-{3,}',outputstr)
-            outputstr =""
+            lines = re.split('\-{3,}', outputstr)
+            outputstr = ""
             try:
                 self.assertFalse(threw_exception)
                 if len(lines) > 4:
@@ -176,10 +190,12 @@ Your total score for this game is: 22'''
                 else:
                     self.assertTrue(False)
             except Exception as e:
-                output_to_file('test_play_game_short', 'hi', ["h", "e", "i"], student_output, correct)
-                raise(e)
+                output_to_file('test_play_game_short', 'hi', [
+                               "h", "e", "i"], student_output, correct)
+                raise (e)
+
     def test_play_game_short_fail(self):
-        correct='''Welcome to hangman!
+        correct = '''Welcome to hangman!
 I am thinking of a word that is 2 letters long.
 --------------
 You have 10 guesses left.
@@ -229,18 +245,18 @@ Oops! That letter is not in my word: *i
 -------
 Sorry, you ran out of guesses. The word was hi'''
         global input_string
-        computer_guesses = ["n", "e", "i", "m","u","k", "l", "p", "s"]
+        computer_guesses = ["n", "e", "i", "m", "u", "k", "l", "p", "s"]
         input_string = (letter for letter in computer_guesses)
         with unittest.mock.patch('builtins.input',  make_input):
-            threw_exception =  False
+            threw_exception = False
             try:
                 student.hangman("hi", False)
             except:
                 threw_exception = True
             global outputstr
-            lines = re.split('\-{3,}',outputstr)
+            lines = re.split('\-{3,}', outputstr)
             student_output = outputstr[:]
-            outputstr =""
+            outputstr = ""
             try:
                 self.assertFalse(threw_exception)
                 if len(lines) > 8:
@@ -268,8 +284,9 @@ Sorry, you ran out of guesses. The word was hi'''
                 else:
                     self.assertTrue(False)
             except Exception as e:
-                output_to_file('test_play_game_short_fail', 'hi', computer_guesses, student_output, correct)
-                raise(e)
+                output_to_file('test_play_game_short_fail', 'hi',
+                               computer_guesses, student_output, correct)
+                raise (e)
 
     def test_play_game_wildcard(self):
         correct = '''Welcome to hangman!
@@ -324,16 +341,16 @@ Your total score for this game is: 55
         computer_guesses = ["k", "w", "i", "l", "d", "c", WILDCARD, WILDCARD]
         input_string = (letter for letter in computer_guesses)
         with unittest.mock.patch('builtins.input',  make_input):
-            threw_exception =  False
+            threw_exception = False
             try:
                 student.hangman("wildcard", True)
             except:
                 threw_exception = True
             global outputstr
 
-            lines = re.split('\-{3,}',outputstr)
+            lines = re.split('\-{3,}', outputstr)
             student_output = outputstr[:]
-            outputstr =""
+            outputstr = ""
             try:
                 self.assertFalse(threw_exception)
                 if len(lines) > 9:
@@ -350,22 +367,24 @@ Your total score for this game is: 55
                     self.assertTrue("9 guesses" in lines[6])
                     self.assertTrue("wildc"+HIDDEN*2+"d" in lines[6])
                     self.assertTrue("9 guesses" in lines[7])
-                    self.assertTrue("revealed" in lines[7]) # lost 2 guesses
+                    self.assertTrue("revealed" in lines[7])  # lost 2 guesses
                     self.assertTrue("6 guesses" in lines[8])
-                    self.assertTrue("revealed" in lines[8]) # lost 2 guesses
+                    self.assertTrue("revealed" in lines[8])  # lost 2 guesses
                     self.assertTrue("score" in lines[9])
                     self.assertTrue("55" in lines[9])
                 else:
                     self.assertTrue(False)
             except Exception as e:
-                output_to_file('test_play_game_wildcard', 'wildcard', computer_guesses, student_output, correct)
-                raise(e)
+                output_to_file('test_play_game_wildcard', 'wildcard',
+                               computer_guesses, student_output, correct)
+                raise (e)
+
 
 # Dictionary mapping function names from the above TestCase class to
 # messages you'd like the student to see if the test fails.
 failure_messages = {
-    'test_has_player_won' : 'Your function has_player_won() does not return the correct result.',
-    'test_has_player_won_repeated_letters' : 'Your function has_player_won() does not return the correct result for repeated letters.',
+    'test_has_player_won': 'Your function has_player_won() does not return the correct result.',
+    'test_has_player_won_repeated_letters': 'Your function has_player_won() does not return the correct result for repeated letters.',
     'test_has_player_won_empty_string': 'Your function has_player_won() does not return the correct result for the empty string',
     'test_has_player_won_empty_list': 'Your function has_player_won() does not return the correct result for the empty list',
     'test_get_word_progress': 'Your function get_word_progress() does not return the correct result.',
@@ -383,8 +402,8 @@ failure_messages = {
 # Dictionary mapping function names from the above TestCase class to
 # messages you'd like the student to see if their code throws an error.
 error_messages = {
-    'test_has_player_won' : 'Your function has_player_won() produces an error.',
-    'test_has_player_won_repeated_letters' : 'Your function has_player_won() produces an error for repeated letters.',
+    'test_has_player_won': 'Your function has_player_won() produces an error.',
+    'test_has_player_won_repeated_letters': 'Your function has_player_won() produces an error for repeated letters.',
     'test_has_player_won_empty_string': 'Your function has_player_won() produces an error for the empty string',
     'test_has_player_won_empty_list': 'Your function has_player_won() produces an error for the empty list',
     'test_get_word_progress': 'Your function get_word_progress() produces an error.',
@@ -403,8 +422,8 @@ error_messages = {
 # the point value each test is worth. Make sure these add up to 5!
 # TODO update values depending on the number of Hangman test cases we use
 point_values = {
-    'test_has_player_won' : .40,
-    'test_has_player_won_repeated_letters' : .40,
+    'test_has_player_won': .40,
+    'test_has_player_won_repeated_letters': .40,
     'test_has_player_won_empty_string': .40,
     'test_has_player_won_empty_list': .40,
     'test_get_word_progress': .40,
@@ -421,6 +440,8 @@ point_values = {
 
 # Subclass to track a point score and appropriate
 # grade comment for a suit of unit tests
+
+
 class Results_600(unittest.TextTestResult):
 
     # We override the init method so that the Result object
@@ -444,7 +465,7 @@ class Results_600(unittest.TextTestResult):
         point_value = point_values[test_name]
         message = messages[test_name]
         self.output.append('[-%s]: %s' % (point_value, message))
-        self.points -= round(point_value,2)
+        self.points -= round(point_value, 2)
 
     def getOutput(self):
         if len(self.output) == 0:
@@ -453,6 +474,7 @@ class Results_600(unittest.TextTestResult):
 
     def getPoints(self):
         return self.points
+
 
 if __name__ == '__main__':
     exec("import hangman as student")
@@ -463,12 +485,13 @@ if __name__ == '__main__':
     sys.stdout = MyStream(sys.stdout)
     suite = unittest.TestSuite()
     suite.addTest(unittest.TestLoader().loadTestsFromTestCase(TestPS2))
-    result = unittest.TextTestRunner(verbosity=2, resultclass=Results_600).run(suite)
+    result = unittest.TextTestRunner(
+        verbosity=2, resultclass=Results_600).run(suite)
 
     output = result.getOutput()
-    points = round(result.getPoints(),3)
-    if points <=0:
-        points=0.0
+    points = round(result.getPoints(), 3)
+    if points <= 0:
+        points = 0.0
     sys.stdout = store
 
     print("\n\nProblem Set 2 Unit Test Results:")

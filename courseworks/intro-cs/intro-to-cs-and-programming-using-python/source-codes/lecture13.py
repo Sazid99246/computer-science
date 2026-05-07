@@ -75,6 +75,7 @@ def sum_digits_assert(s):
 # EXAMPLE: Exceptions with user input
 ######################################
 
+
 def divide_nums1():
     a = int(input("Tell me one number: "))
     b = int(input("Tell me another number: "))
@@ -112,7 +113,6 @@ def divide_nums3():
 # divide_nums3()
 
 
-
 #########################################
 ########### YOU TRY IT ##################
 ##########################################
@@ -133,17 +133,17 @@ def pairwise_div(Lnum, Ldenom):
 
 
 # For example:
-L1 = [4,5,6]
-L2 = [1,2,3]
+L1 = [4, 5, 6]
+L2 = [1, 2, 3]
 # print(pairwise_div(L1, L2))  # prints [4.0,2.5,2.0]
 
-L1 = [4,5,6]
-L2 = [1,0,3]
+L1 = [4, 5, 6]
+L2 = [1, 0, 3]
 # print(pairwise_div(L1, L2))  # raises a ValueError
 
-## to run after introducing assertions
-L1 = [4,5,6,7,8]
-L2 = [1,8,3]
+# to run after introducing assertions
+L1 = [4, 5, 6, 7, 8]
+L2 = [1, 8, 3]
 # print(pairwise_div(L1, L2))  # raises an AssertionError
 
 L1 = []
@@ -155,7 +155,7 @@ L2 = []
 
 
 #######################################
-## EXAMPLE: Longer exceptions and lists example
+# EXAMPLE: Longer exceptions and lists example
 #######################################
 def get_stats(class_list, avg_func):
     """ class_list is a list of student info:
@@ -168,16 +168,19 @@ def get_stats(class_list, avg_func):
         new_stats.append([person[0], person[1], avg_func(person[1])])
     return new_stats
 
+
 test_grades = [[['peter', 'parker'], [10.0, 55.0, 85.0]],
                [['bruce', 'wayne'], [10.0, 80.0, 75.0]],
-               [['captain', 'america'], [80.0,10.0,96.0]],
+               [['captain', 'america'], [80.0, 10.0, 96.0]],
                [['thor'], []]]
 
-## Note in the get_stats function calls below,
-## we are passing the various avg1/2/3 function names as params
-## to test different avg function behaviours with the same data
+# Note in the get_stats function calls below,
+# we are passing the various avg1/2/3 function names as params
+# to test different avg function behaviours with the same data
 
 # avg function: version without an exception
+
+
 def avg1(grades):
     return (sum(grades))/len(grades)
 # print(get_stats(test_grades, avg1))
@@ -229,22 +232,24 @@ def pairwise_div(Lnum, Ldenom):
         for i in range(len(Lnum)):
             L.append(Lnum[i]/Ldenom[i])
         return L
-    ## with list comprehensions
-    ## return [Lnum[i]/Ldenom[i] for i in range(len(Lnum))]
+    # with list comprehensions
+    # return [Lnum[i]/Ldenom[i] for i in range(len(Lnum))]
 
 
 # For example:
-L1 = [4,5,6]
-L2 = [1,2,3]
+L1 = [4, 5, 6]
+L2 = [1, 2, 3]
 # print(pairwise_div(L1, L2))  # prints [4.0,2.5,2.0]
 
-L1 = [4,5,6]
-L2 = [1,0,3]
+L1 = [4, 5, 6]
+L2 = [1, 0, 3]
 # print(pairwise_div(L1, L2))  # raises a ValueError
 
 ##############################################
 ################### AT HOME ###################
 ################################################
+
+
 def pairwise_div(Lnum, Ldenom):
     """ Lnum and Ldenom are non-empty lists of equal lengths
         containing numbers

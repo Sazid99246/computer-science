@@ -1,8 +1,9 @@
 #################
-## EXAMPLE: simple Coordinate class
+# EXAMPLE: simple Coordinate class
 #################
 class Coordinate(object):
     """ A coordinate made up of an x and y value """
+
     def __init__(self, x, y):
         """ Sets the x and y values """
         self.x = x
@@ -17,30 +18,35 @@ class Coordinate(object):
 
 class Coordinate(object):
     """ A coordinate made up of an x and y numerical value """
+
     def __init__(self, x, y):
         """ Sets the x and y values """
         self.x = x
         self.y = y
+
     def getX(self):
         """ Returns how far away self is on the x axis """
         return self.x
+
     def getY(self):
         """ Returns how far away self is on the y axis """
         return self.y
+
     def distance(self, other):
         """ Returns the euclidean distance between two Coordinate objects """
         x_diff_sq = (self.x-other.x)**2
         y_diff_sq = (self.y-other.y)**2
         return (x_diff_sq + y_diff_sq)**0.5
 
-c = Coordinate(3,4)
+
+c = Coordinate(3, 4)
 a = 0
-origin = Coordinate(a,a)
+origin = Coordinate(a, a)
 
 # these 3 calls returns the same thing
-#print(c.distance(origin))
-#print(Coordinate.distance(c, origin))
-#print(origin.distance(c))
+# print(c.distance(origin))
+# print(Coordinate.distance(c, origin))
+# print(origin.distance(c))
 
 
 ###########################################################
@@ -72,6 +78,7 @@ class Vehicle:
 # Print the first one's number of occupants
 # Print the second one's color
 
+
 vehicle1 = Vehicle(2, 1, "red")
 vehicle2 = Vehicle(18, 3, "green")
 
@@ -84,17 +91,20 @@ print(vehicle2.color)
 # which takes in an int n. When called, self's number of occupants
 # increases by n. It returns the total occupants after the increase.
 
+
 class Vehicle(object):
     def __init__(self, w, o, c):
         self.wheels = w
         self.occ = o
-        self.color= c
+        self.color = c
     # add method add_n_occupants here
+
     def add_n_occupants(self, n):
         self.occ += n
         return self.occ
 
-v1 = Vehicle(4,2,'blue')
+
+v1 = Vehicle(4, 2, 'blue')
 print(v1.occ)   # prints 2
 print(v1.add_n_occupants(3))   # prints 5
 print(v1.occ)
@@ -107,13 +117,16 @@ print(v1.occ)
 # exceeds the max_occupancy allowed for that vehicle,
 #   * you do not perform the increase, and
 #   * you raise a ValueError with an apprpriate message
+
+
 class Vehicle(object):
     def __init__(self, w, o, c):
         self.wheels = w
         self.occ = o
-        self.color= c
+        self.color = c
         self.max_occupancy = 5
     # add method add_n_occupants here
+
     def add_n_occupants(self, n):
         if (self.occ + n > self.max_occupancy):
             raise ValueError("exceeded max_occupancy")
@@ -121,17 +134,20 @@ class Vehicle(object):
             self.occ += n
             return self.occ
 
-#Question 5:
+# Question 5:
 # Modify the Vehicle class __init__ such that if a vehicle is created
 # without specifying a color then the color is set to "black".
 # Hint: remember default parameters?
+
+
 class Vehicle(object):
     def __init__(self, w, o, c="black"):
         self.wheels = w
         self.occ = o
-        self.color= c
+        self.color = c
         self.max_occupancy = 5
     # add method add_n_occupants here
+
     def add_n_occupants(self, n):
         if (self.occ + n > self.max_occupancy):
             raise ValueError("exceeded max_occupancy")

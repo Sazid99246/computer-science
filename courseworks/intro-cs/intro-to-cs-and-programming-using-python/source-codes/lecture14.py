@@ -1,5 +1,5 @@
 #######################################
-## EXAMPLE: getting grades using lists, do NOT do it this way...
+# EXAMPLE: getting grades using lists, do NOT do it this way...
 #######################################
 def get_grade_list(student, name_list, grade_list):
     """ student is a str
@@ -8,14 +8,17 @@ def get_grade_list(student, name_list, grade_list):
     grade = grade_list[i]
     return (student, grade)
 
+
 names = ['Ana', 'John', 'Denise', 'Katy']
 grade = ['B', 'A', 'A', 'B']
 # can add more lists for course number, etc.
 # print(get_grade_list('John', names, grade))
 
 #######################################
-## EXAMPLE: getting grades using list of lists, do NOT do it this way...
+# EXAMPLE: getting grades using list of lists, do NOT do it this way...
 #######################################
+
+
 def get_grades(who, what, data):
     """ who and what are strings
         data is a list containing lists of student info """
@@ -24,6 +27,7 @@ def get_grades(who, what, data):
             for info in stud[1:]:
                 if info[0] == what:
                     return who, info
+
 
 eric = ['eric', ['ps', [8, 4, 5]], ['mq', [6, 7]]]
 ana = ['ana', ['ps', [10, 10, 10]], ['mq', [9, 10]]]
@@ -35,8 +39,10 @@ grades = [eric, ana, john]
 # print(get_grades('ana', 'ps', grades))
 
 #######################################
-## EXAMPLE: getting grades using dictionaries
+# EXAMPLE: getting grades using dictionaries
 #######################################
+
+
 def get_grade_dict(student, grade_dict):
     return grade_dict[student]
 
@@ -45,7 +51,7 @@ def get_grade_dict(student, grade_dict):
 
 
 #####################
-## DICTIONARY OPERATIONS
+# DICTIONARY OPERATIONS
 ######################
 # # create dicts
 # my_dict = {}
@@ -98,7 +104,7 @@ def find_grades(grades, students):
     return result
 
 
-d = {'Ana':'B', 'Matt':'C', 'John':'B', 'Katy':'A'}
+d = {'Ana': 'B', 'Matt': 'C', 'John': 'B', 'Katy': 'A'}
 # print(find_grades(d, ['Matt', 'Katy'])) # returns ['C', 'A']
 
 ########################################################
@@ -116,9 +122,9 @@ def find_in_L(Ld, k):
     return False
 
 
-d1 = {1:2, 3:4, 5:6}
-d2 = {2:4, 4:6}
-d3 = {1:1, 3:9, 4:16, 5:25}
+d1 = {1: 2, 3: 4, 5: 6}
+d2 = {2: 4, 4: 6}
+d3 = {1: 1, 3: 9, 4: 16, 5: 25}
 
 # print(find_in_L([d1, d2, d3], 2))  # returns True
 # print(find_in_L([d1, d2, d3], 25))  # returns False
@@ -138,18 +144,19 @@ def count_matches(d):
     return count
 
 
-d = {1:2, 3:4, 5:6}
+d = {1: 2, 3: 4, 5: 6}
 # print(count_matches(d))   # prints 0
 
-d = {1:2, 'a':'a', 5:5}
+d = {1: 2, 'a': 'a', 5: 5}
 # print(count_matches(d))   # prints 2
 
 ##############################################################
 
 ############# YOU TRY IT ###################
-my_d ={'Ana':{'mq':[10], 'ps':[10,10]},
-       'Fredo':{'ps':[7,8], 'mq':[8]},
-       'Eric':{'mq':[3], 'ps':[0]}      }
+my_d = {'Ana': {'mq': [10], 'ps': [10, 10]},
+        'Fredo': {'ps': [7, 8], 'mq': [8]},
+        'Eric': {'mq': [3], 'ps': [0]}}
+
 
 def get_average(data, what):
     """ data is a dict like my_d above
@@ -170,10 +177,12 @@ def get_average(data, what):
 
 ###########################################################
 
+
 #######################################
-## COMPLEX EXAMPLE: frequency dictionary of song lyrics
+# COMPLEX EXAMPLE: frequency dictionary of song lyrics
 #######################################
 song = "RAH RAH AH AH AH ROM MAH RO MAH MAH"
+
 
 def generate_word_dict(song):
     """ song is a string
@@ -195,8 +204,10 @@ def generate_word_dict(song):
     # return is a dict mapping str:int like {'word1':1, 'word2':3}
     return word_dict
 
+
 word_dict = generate_word_dict(song)
 # print(word_dict)
+
 
 def find_frequent_word(word_dict):
     """ word_dict is a frequency dict mapping string:int
@@ -207,13 +218,14 @@ def find_frequent_word(word_dict):
     words = []
     highest = max(word_dict.values())  # this is an int
     # loop to find words occurring with `highest` freq
-    for k,v in word_dict.items():
+    for k, v in word_dict.items():
         # k is a word and v is its frequency
         if v == highest:
             # word in dict has a value that matches `highest` so append it
             words.append(k)
     # return looks like (['word1', 'word2'], 4)
     return (words, highest)
+
 
 most_freq = find_frequent_word(word_dict)
 # print(most_freq)
@@ -238,16 +250,17 @@ def occurs_often(word_dict, x):
         # remove every entry that matches words in `word_freq_tuple`
         # so that you are left with next most frequent words
         for word in word_freq_tuple[0]:
-            del(word_dict[word])
+            del (word_dict[word])
     return freq_list
 
 # print(occurs_often(word_dict, 2))
 
+
 # pick a song by uncommenting your favorite
-#song = "I threw a wish in the well Dont ask me Ill never tell I looked to you as it fell And now youre in my way  Id trade my soul for a wish Pennies and dimes for a kiss I wasnt looking for this But now youre in my way  Your stare was holdin Ripped jeans skin was showin Hot night wind was blowin Where do you think youre going baby  Hey I just met you And this is crazy But heres my number So call me maybe  Its hard to look right At you baby But heres my number So call me maybe  Hey I just met you And this is crazy But heres my number So call me maybe  And all the other boys Try to chase me But heres my number So call me maybe  You took your time with the call I took no time with the fall You gave me nothing at all But still youre in my way  I beg and borrow and steal Have foresight and its real I didnt know I would feel it But its in my way  Your stare was holdin Ripped jeans skin was showin Hot night wind was blowin Where you think youre going baby  Hey I just met you And this is crazy But heres my number So call me maybe  Its hard to look right At you baby But heres my number So call me maybe  Hey I just met you And this is crazy But heres my number So call me maybe  And all the other boys Try to chase me But heres my number So call me maybe  Before you came into my life I missed you so bad I missed you so bad I missed you so so bad  Before you came into my life I missed you so bad And you should know that I missed you so so bad bad bad  Its hard to look right At you baby But heres my number So call me maybe  Hey I just met you And this is crazy But heres my number So call me maybe  And all the other boys Try to chase me But heres my number So call me maybe  Before you came into my life I missed you so bad I missed you so bad I missed you so so bad  Before you came into my life I missed you so bad And you should know that  So call me maybe"
-#song = "Because you know Im all about that bass  Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass bass bass bass  Yeah its pretty clear I aint no size two But I can shake it shake it like Im supposed to do Cause I got that boom boom that all the boys chase And all the right junk in all the right places I see the magazine workin that Photoshop We know that stuff aint real come on now make it stop If you got beauty beauty just raise em up Cause every inch of you is perfect from the bottom to the top Yeah my mama she told me dont worry about your size Shoo wop wop shaooh wop wop She says Boys like a little more booty to hold at night That booty uh that booty booty You know I wont be no stick figure silicone Barbie doll So if that what youre into then go head and move along Because you know Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass Hey Im bringing booty back Go head and tell them skinny girls that No Im just playing I know you think youre fat But Im here to tell you Every inch of you is perfect from the bottom to the top Yeah my mama she told me dont worry about your size Shoo wop wop shaooh wop wop She says Boys like a little more booty to hold at night That booty booty uh that booty booty You know I wont be no stick figure silicone Barbie doll So if thats what youre into then go head and move along Because you know Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass You know Im all about that bass Bout that bass no treble I said Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass Because you know Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass Hey Im all about that bass Bout that bass Hey Im all about that bass Bout that bass Hey Yeah yeah ohh You know you like this bass Hey "
-#song = "It might seem crazy what Im about to say Sunshine shes here you can take a break Im a hot air balloon that could go to space With the air like I dont care baby by the way  Uh  Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do  Here come bad news talking this and that yeah Well give me all you got and dont hold it back yeah Well I should probably warn you Ill be just fine yeah No offense to you dont waste your time Heres why  Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do  Hey Go Uh  Happy Bring me down Cant nothing Bring me down My levels too high Bring me down Cant nothing Bring me down I said let me tell you now Bring me down Cant nothing Bring me down My levels too high Bring me down Cant nothing Bring me down I said  Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do  Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do  Hey Go Uh  Happy repeats Bring me down cant nothing Bring me down my levels too high Bring me down cant nothing Bring me down I said let me tell you now  Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do   Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do  Hey Cmon"
-#song = "Oh  oh oh Oh  Yeah  Im gonna take my horse to the old town road Im gonna ride til I cant no more Im gonna take my horse to the old town road Im gonna ride til I cant no more Kio  Kio   I got the horses in the back Horse tack is attached Hat is matte black Got the boots thats black to match Ridin on a horse  ha You can whip your Porsche I been in the valley You aint been up off that porch  now  Cant nobody tell me nothin You cant tell me nothin Cant nobody tell me nothin You cant tell me nothin  Ridin on a tractor Lean all in my bladder Cheated on my baby You can go and ask her My life is a movie Bull ridin and boobies Cowboy hat from Gucci Wrangler on my booty  Cant nobody tell me nothin You cant tell me nothin Cant nobody tell me nothin You cant tell me nothin  Yeah  Im gonna take my horse to the old town road Im gonna ride til I cant no more Im gonna take my horse to the old town road Im gonna ride til I cant no more   Hat down  cross town  livin like a rock star Spent a lot of money on my brand new guitar Babys got a habit diamond rings and Fendi sports bras Ridin down Rodeo in my Maserati sports car Got no stress  Ive been through all that Im like a Marlboro Man so I kick on back Wish I could roll on back to that old town road I wanna ride til I cant no more   Yeah  Im gonna take my horse to the old town road Im gonna ride til I cant no more Im gonna take my horse to the old town road Im gonna ride til I cant no more"
+# song = "I threw a wish in the well Dont ask me Ill never tell I looked to you as it fell And now youre in my way  Id trade my soul for a wish Pennies and dimes for a kiss I wasnt looking for this But now youre in my way  Your stare was holdin Ripped jeans skin was showin Hot night wind was blowin Where do you think youre going baby  Hey I just met you And this is crazy But heres my number So call me maybe  Its hard to look right At you baby But heres my number So call me maybe  Hey I just met you And this is crazy But heres my number So call me maybe  And all the other boys Try to chase me But heres my number So call me maybe  You took your time with the call I took no time with the fall You gave me nothing at all But still youre in my way  I beg and borrow and steal Have foresight and its real I didnt know I would feel it But its in my way  Your stare was holdin Ripped jeans skin was showin Hot night wind was blowin Where you think youre going baby  Hey I just met you And this is crazy But heres my number So call me maybe  Its hard to look right At you baby But heres my number So call me maybe  Hey I just met you And this is crazy But heres my number So call me maybe  And all the other boys Try to chase me But heres my number So call me maybe  Before you came into my life I missed you so bad I missed you so bad I missed you so so bad  Before you came into my life I missed you so bad And you should know that I missed you so so bad bad bad  Its hard to look right At you baby But heres my number So call me maybe  Hey I just met you And this is crazy But heres my number So call me maybe  And all the other boys Try to chase me But heres my number So call me maybe  Before you came into my life I missed you so bad I missed you so bad I missed you so so bad  Before you came into my life I missed you so bad And you should know that  So call me maybe"
+# song = "Because you know Im all about that bass  Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass bass bass bass  Yeah its pretty clear I aint no size two But I can shake it shake it like Im supposed to do Cause I got that boom boom that all the boys chase And all the right junk in all the right places I see the magazine workin that Photoshop We know that stuff aint real come on now make it stop If you got beauty beauty just raise em up Cause every inch of you is perfect from the bottom to the top Yeah my mama she told me dont worry about your size Shoo wop wop shaooh wop wop She says Boys like a little more booty to hold at night That booty uh that booty booty You know I wont be no stick figure silicone Barbie doll So if that what youre into then go head and move along Because you know Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass Hey Im bringing booty back Go head and tell them skinny girls that No Im just playing I know you think youre fat But Im here to tell you Every inch of you is perfect from the bottom to the top Yeah my mama she told me dont worry about your size Shoo wop wop shaooh wop wop She says Boys like a little more booty to hold at night That booty booty uh that booty booty You know I wont be no stick figure silicone Barbie doll So if thats what youre into then go head and move along Because you know Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass You know Im all about that bass Bout that bass no treble I said Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass Because you know Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass no treble Im all about that bass Bout that bass Hey Im all about that bass Bout that bass Hey Im all about that bass Bout that bass Hey Yeah yeah ohh You know you like this bass Hey "
+# song = "It might seem crazy what Im about to say Sunshine shes here you can take a break Im a hot air balloon that could go to space With the air like I dont care baby by the way  Uh  Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do  Here come bad news talking this and that yeah Well give me all you got and dont hold it back yeah Well I should probably warn you Ill be just fine yeah No offense to you dont waste your time Heres why  Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do  Hey Go Uh  Happy Bring me down Cant nothing Bring me down My levels too high Bring me down Cant nothing Bring me down I said let me tell you now Bring me down Cant nothing Bring me down My levels too high Bring me down Cant nothing Bring me down I said  Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do  Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do  Hey Go Uh  Happy repeats Bring me down cant nothing Bring me down my levels too high Bring me down cant nothing Bring me down I said let me tell you now  Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do   Because Im happy Clap along if you feel like a room without a roof Because Im happy Clap along if you feel like happiness is the truth Because Im happy Clap along if you know what happiness is to you Because Im happy Clap along if you feel like thats what you wanna do  Hey Cmon"
+# song = "Oh  oh oh Oh  Yeah  Im gonna take my horse to the old town road Im gonna ride til I cant no more Im gonna take my horse to the old town road Im gonna ride til I cant no more Kio  Kio   I got the horses in the back Horse tack is attached Hat is matte black Got the boots thats black to match Ridin on a horse  ha You can whip your Porsche I been in the valley You aint been up off that porch  now  Cant nobody tell me nothin You cant tell me nothin Cant nobody tell me nothin You cant tell me nothin  Ridin on a tractor Lean all in my bladder Cheated on my baby You can go and ask her My life is a movie Bull ridin and boobies Cowboy hat from Gucci Wrangler on my booty  Cant nobody tell me nothin You cant tell me nothin Cant nobody tell me nothin You cant tell me nothin  Yeah  Im gonna take my horse to the old town road Im gonna ride til I cant no more Im gonna take my horse to the old town road Im gonna ride til I cant no more   Hat down  cross town  livin like a rock star Spent a lot of money on my brand new guitar Babys got a habit diamond rings and Fendi sports bras Ridin down Rodeo in my Maserati sports car Got no stress  Ive been through all that Im like a Marlboro Man so I kick on back Wish I could roll on back to that old town road I wanna ride til I cant no more   Yeah  Im gonna take my horse to the old town road Im gonna ride til I cant no more Im gonna take my horse to the old town road Im gonna ride til I cant no more"
 song = "Hey  I was doing just fine before I met you I drink too much and thats an issue but Im okay Hey  you tell your friends it was nice to meet them But I hope I never see them again I know it breaks your heart Moved to the city in a broke down car And four years  no calls Now youre looking pretty in a hotel bar And I cant stop No  I cant stop So baby pull me closer in the backseat of your Rover That I know you cant afford Bite that tattoo on your shoulder Pull the sheets right off the corner Of the mattress that you stole From your roommate back in Boulder We aint ever getting older We aint ever getting older We aint ever getting older You look as good as the day I met you I forget just why I left you  I was insane Stay and play that Blink 182 song That we beat to death in Tucson  okay I know it breaks your heart Moved to the city in a broke down car And four years  no call Now Im looking pretty in a hotel bar And I cant stop No  I cant stop So baby pull me closer in the backseat of your Rover That I know you cant afford Bite that tattoo on your shoulder Pull the sheets right off the corner Of the mattress that you stole From your roommate back in Boulder We aint ever getting older We aint ever getting older We aint ever getting older So baby pull me closer in the backseat of your Rover That I know you cant afford Bite that tattoo on your shoulder Pull the sheets right off the corner Of the mattress that you stole From your roommate back in Boulder We aint ever getting older We aint ever getting older we aint ever getting older We aint ever getting older we aint ever getting older We aint ever getting older we aint ever getting older We aint ever getting older We aint ever getting older No we aint ever getting older"
 
 song_dict = generate_word_dict(song)
@@ -293,9 +306,10 @@ def find_in_L(Ld, k):
             return True
     return False
 
-d1 = {1:2, 3:4, 5:6}
-d2 = {2:4, 4:6}
-d3 = {1:1, 3:9, 4:16, 5:25}
+
+d1 = {1: 2, 3: 4, 5: 6}
+d2 = {2: 4, 4: 6}
+d3 = {1: 1, 3: 9, 4: 16, 5: 25}
 
 # print(find_in_L([d1, d2, d3], 2))  # returns True
 # print(find_in_L([d1, d2, d3], 25))  # returns False
@@ -306,7 +320,7 @@ def count_matches(d):
     Returns how many entries in d have the key equal to its value """
     # your code here
     count = 0
-    for k,v in d.items():
+    for k, v in d.items():
         if k == v:
             count += 1
     return count

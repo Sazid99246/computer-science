@@ -19,7 +19,7 @@
 # print(x, '==', 10*0.1)
 
 #############
-## EXAMPLE
+# EXAMPLE
 # protip: use Python Tutor to go step-by-step: http://pythontutor.com/
 #############
 
@@ -47,8 +47,8 @@
 
 
 ################
-## EXAMPLE: Approximation by epsilon increments
-## Incrementally fixing code as we find issues with approximation
+# EXAMPLE: Approximation by epsilon increments
+# Incrementally fixing code as we find issues with approximation
 ################
 
 # try with 36, 24, 2, 12345

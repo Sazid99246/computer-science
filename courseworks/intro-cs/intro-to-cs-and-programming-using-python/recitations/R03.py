@@ -2,7 +2,7 @@
 # Write a program using bisection search to find the forth root of a number inputted by the
 # user. Print the forth root calculated with max error of 0.01.
 
-x = float(input("Using bisection search calculate the forth root of: " ))
+x = float(input("Using bisection search calculate the forth root of: "))
 epsilon = 0.01
 low = 0
 high = x
@@ -20,11 +20,13 @@ print("Forth root of " + str(x) + " is approximately " + str(ans))
 # Problem 2 - Functions
 # Write a Python function to check whether a number falls in a given range.
 
+
 def check_in_range(x, start, end):
     if x >= start and x <= end:
         return "Yes"
     else:
         return "No"
+
 
 print(check_in_range(3, 1, 5))
 print(check_in_range(3, 5, 7))
@@ -33,6 +35,7 @@ print(check_in_range(3, 5, 7))
 # Write a Python function to check whether a number is perfect or not.
 # (In number theory, a perfect number is a positive integer that is equal
 # to the sum of its proper positive divisors, excluding the number itself).
+
 
 def perfect_number(n):
     my_sum = 0

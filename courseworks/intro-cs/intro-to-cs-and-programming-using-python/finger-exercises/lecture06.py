@@ -11,5 +11,5 @@ while guess != N:
         guess = (high+low)//2
         count += 1
 
-print("count:",count)
-print("answer:",guess)
+print("count:", count)
+print("answer:", guess)

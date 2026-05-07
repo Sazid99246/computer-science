@@ -7,6 +7,7 @@ def sum_series(n):
     else:
         return n + sum_series(n - 2)
 
+
 # testing
 print(sum_series(6))  # 12
 print(sum_series(10))  # 30
@@ -21,6 +22,7 @@ def power(a, b):
     else:
         return a * power(a, b - 1)
 
+
 # testing
 print(power(4, 3))  # 64
 print(power(3, 4))  # 81
@@ -34,6 +36,7 @@ def list_sum(num_List):
     else:
         return num_List[0] + list_sum(num_List[1:])
 
+
 # testing
 print(list_sum([2, 4, 5, 6, 7]))  # expect 24
 
@@ -46,19 +49,18 @@ def harmonic(n):
     else:
         return 1/n + harmonic(n-1)
 
-print(harmonic(3)) # expect 1.83333333333
-print(harmonic(5)) # expect 2.28333333333
 
-
+print(harmonic(3))  # expect 1.83333333333
+print(harmonic(5))  # expect 2.28333333333
 
 
 # Extra - Problem 5: Write a recursive program to find the greatest common divisor (gcd)
 # of two integers.
 def gcd(a, b):
-    if(b==0):
+    if (b == 0):
         return a
     else:
-        return gcd(b,a%b)
+        return gcd(b, a % b)
 
 
 # testing

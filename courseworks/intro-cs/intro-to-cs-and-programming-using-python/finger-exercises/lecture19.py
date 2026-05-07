@@ -2,6 +2,7 @@ class Container(object):
     """
     A container object is a list and can store elements of any type
     """
+
     def __init__(self):
         """
         Initializes an empty list
@@ -21,10 +22,12 @@ class Container(object):
         """
         self.myList.add(elem)
 
+
 class Stack(Container):
     """
     A subclass of Container. Has an additional method to remove elements.
     """
+
     def remove(self):
         """
         The newest element in the container list is removed

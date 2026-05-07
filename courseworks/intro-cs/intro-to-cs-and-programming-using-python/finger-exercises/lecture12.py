@@ -10,5 +10,6 @@ def count_sqrts(nums_list):
             count += 1
     return count
 
+
 # Examples:
-print(count_sqrts([3,4,2,1,9,25])) # prints 3
+print(count_sqrts([3, 4, 2, 1, 9, 25]))  # prints 3

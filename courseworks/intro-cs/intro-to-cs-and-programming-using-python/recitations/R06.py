@@ -1,6 +1,6 @@
 ########################################################################
 # Problem 1: List concatenation
-original_list = [1,2,35,10,5,8,9,23]
+original_list = [1, 2, 35, 10, 5, 8, 9, 23]
 
 # a) Using List concatenation create a new list from the orignal list,
 # removing all multiples of 5 from a list of numbers.
@@ -24,6 +24,7 @@ print([n / 2 for n in original_list])
 # Insert 20 in list after every 4th element:
 # [1, 3, 5, 7, 20, 9, 11, 0, 2, 20, 4, 6, 8, 10, 20, 8, 9, 0, 4, 20, 3, 0]
 
+
 def insert_element_list1(lst, x, n):
     """
     Parameters:
@@ -41,7 +42,7 @@ def insert_element_list1(lst, x, n):
 
 
 # testing
-nums = [1, 3, 5, 7, 9, 11,0, 2, 4, 6, 8, 10, 8, 9, 0, 4, 3, 0]
+nums = [1, 3, 5, 7, 9, 11, 0, 2, 4, 6, 8, 10, 8, 9, 0, 4, 3, 0]
 x = 20
 n = 4
 print(insert_element_list1(nums, x, n))
@@ -94,9 +95,10 @@ def split_list(lst, n):
     result = [lst[i:i+n] for i in range(0, len(lst), n)]
     return result
 
+
 # testing
-nums = [12,45,23,67,78,90,45,32,100,76,38,62,73,29,83]
+nums = [12, 45, 23, 67, 78, 90, 45, 32, 100, 76, 38, 62, 73, 29, 83]
 n = 4
-print(split_list(nums,n))
+print(split_list(nums, n))
 n = 5
-print(split_list(nums,n))
+print(split_list(nums, n))

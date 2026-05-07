@@ -13,10 +13,12 @@ def keys_with_value(aDict, target):
             result.append(key)
     return sorted(result)
 
+
 # Examples:
-aDict = {1:2, 2:4, 5:2}
+aDict = {1: 2, 2: 4, 5: 2}
 target = 2
-print(keys_with_value(aDict, target)) # prints the list [1,5]
+print(keys_with_value(aDict, target))  # prints the list [1,5]
+
 
 def all_positive(d):
     """
@@ -31,6 +33,7 @@ def all_positive(d):
             result.append(key)
     return sorted(result)
 
+
 # Examples:
-d = {5:[2,-4], 2:[1,2,3], 1:[2]}
+d = {5: [2, -4], 2: [1, 2, 3], 1: [2]}
 print(all_positive(d))   # prints the list [1, 2]

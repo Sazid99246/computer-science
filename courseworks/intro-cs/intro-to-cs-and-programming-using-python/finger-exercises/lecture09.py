@@ -13,7 +13,8 @@ def dot_product(tA, tB):
         sum += (tA[i] * tB[i])
     return (len(tA), sum)
 
+
 # Examples:
 tA = (1, 2, 3)
 tB = (4, 5, 6)
-print(dot_product(tA, tB)) # prints (3,32)
+print(dot_product(tA, tB))  # prints (3,32)

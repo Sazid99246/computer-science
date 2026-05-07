@@ -1,4 +1,4 @@
-## remove from a list
+# remove from a list
 # L = [2,1,3,6,3,7,0]
 # L.remove(2)
 # L.remove(3)
@@ -7,7 +7,7 @@
 
 
 #############
-## Removing elements
+# Removing elements
 #############
 
 # L = [2,1,3,6,3,7,0]
@@ -49,6 +49,7 @@ def remove_all(L, e):
 
 #######################################
 
+
 def remove_all(L, e):
     """
     L is a list
@@ -63,7 +64,7 @@ def remove_all(L, e):
 # print(Lin)    # prints [1]
 
 
-## this function does not do the right thing
+# this function does not do the right thing
 def remove_all(L, e):
     """
     L is a list
@@ -79,11 +80,10 @@ def remove_all(L, e):
 # print(Lin)    # INCORRECTLY prints [1,2]
 
 
-
 #############
-## TRICKY EXAMPLE 4: removing element as you are mutating a list
+# TRICKY EXAMPLE 4: removing element as you are mutating a list
 #############
-## this is an incorrect way to do it
+# this is an incorrect way to do it
 def remove_dups(L1, L2):
     for e in L1:
         if e in L2:
@@ -94,9 +94,11 @@ def remove_dups(L1, L2):
 # remove_dups(L1, L2)
 # print(L1)
 
-## this is an incorrect way to do it
+# this is an incorrect way to do it
+
+
 def remove_dups(L1, L2):
-    L1_copy = L1 # not actually a copy, just an alias!!
+    L1_copy = L1  # not actually a copy, just an alias!!
     for e in L1:
         if e in L2:
             L1.remove(e)
@@ -106,9 +108,11 @@ def remove_dups(L1, L2):
 # remove_dups(L1, L2)
 # print(L1)
 
-## this is the CORRECT way to do it
+# this is the CORRECT way to do it
+
+
 def remove_dups(L1, L2):
-    L1_copy = L1[:] # actually a copy aka clone
+    L1_copy = L1[:]  # actually a copy aka clone
     for e in L1_copy:
         if e in L2:
             L1.remove(e)
@@ -119,11 +123,9 @@ def remove_dups(L1, L2):
 # print(L1)
 
 
-
-
 ############################
 ############################
-## Control copying, alises
+# Control copying, alises
 # old_list = [[1,2],[3,4],[5,'foo']]
 # new_list = old_list
 
@@ -131,7 +133,7 @@ def remove_dups(L1, L2):
 # print("New list:", new_list)
 # print("Old list:", old_list)
 
-## Control copying, shallow copy
+# Control copying, shallow copy
 # import copy
 # old_list = [[1,2],[3,4],[5,6]]
 # new_list = copy.copy(old_list)
@@ -141,7 +143,7 @@ def remove_dups(L1, L2):
 # print("New list:", new_list)
 # print("Old list:", old_list)
 
-## Control copying, deep copy
+# Control copying, deep copy
 # import copy
 # old_list = [[1,2],[3,4],[5,6]]
 # new_list = copy.deepcopy(old_list)
@@ -152,8 +154,7 @@ def remove_dups(L1, L2):
 # print("Old list:", old_list)
 
 
-
-## EXAMPLE: aliasing
+# EXAMPLE: aliasing
 # a = 1
 # b = a
 # print(a)
@@ -165,14 +166,14 @@ def remove_dups(L1, L2):
 # print(hot)
 # print(warm)
 
-## EXAMPLE: cloning
+# EXAMPLE: cloning
 # cool = ['blue', 'green', 'grey']
 # chill = cool[:]
 # chill.append('black')
 # print(chill)
 # print(cool)
 
-## EXAMPLE: sorting with/without mutation
+# EXAMPLE: sorting with/without mutation
 # warm = ['red', 'yellow', 'orange']
 # sortedwarm = warm.sort()
 # print(warm)
@@ -183,7 +184,7 @@ def remove_dups(L1, L2):
 # print(cool)
 # print(sortedcool)
 
-## EXAMPLE: lists of lists of lists...
+# EXAMPLE: lists of lists of lists...
 # warm = ['yellow', 'orange']
 # hot = ['red']
 # brightcolors = [warm]
@@ -244,8 +245,6 @@ def remove_dups(L1, L2):
 ###############################
 
 
-
-
 ############################################
 ################### AT HOME ######################
 ############################################
@@ -263,6 +262,8 @@ def repeat(L, n):
 # print(Lin)    # prints [1, 2, 3, 1, 2, 3, 1, 2, 3]
 
 # Think about why the following solution does not work!
+
+
 def repeat(L, n):
     """ L is a list of ints
         n is a positive int
@@ -305,7 +306,6 @@ def remove_all(L, e):
 # L = [1,2,2,2]
 # remove_all(L, 0)
 # print(L)    # prints [1, 2, 2, 2]
-
 
 
 #######################################
