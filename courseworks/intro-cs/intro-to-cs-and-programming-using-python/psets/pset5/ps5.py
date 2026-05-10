@@ -254,8 +254,8 @@ def main():
     # im2.show()
 
     # Uncomment the following lines to test part 2
-    im = reveal_image('hidden1.bmp')
-    im.show()
+    # im = reveal_image('hidden1.bmp')
+    # im.show()
 
     # im2 = reveal_image('hidden2.bmp')
     # im2.show()
