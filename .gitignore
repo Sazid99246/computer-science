@@ -4,3 +4,11 @@
 .direnv/
 .envrc
 __pycache__
+
+.DS_Store
+compiled/
+/doc/
+*~
+*.bak
+\#*
+.\#*
