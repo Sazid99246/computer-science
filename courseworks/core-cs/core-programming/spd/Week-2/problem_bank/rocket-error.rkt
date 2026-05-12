@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname rocket-error-solution) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname rocket-error) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; Consider the following data definition from the Rocket practice problem.
 ;;
 ;; We have designed a function has-landed?, but there are errors in the function
@@ -26,11 +26,12 @@
 (define (fn-for-rocket-descent rd)
   (cond [(number? rd)
          (... rd)]
-         [else  (...)])) 
-;;; Template rules used:
-;;; one-of: 2 case
-;;; - atomic-non-distinct: Number
-;;; - atomic-distinct: false
+         [else  (...)]))
+;; Template rules used:
+;; one-of: 2 case
+;; - atomic-non-distinct: Number
+;; - atomic-distinct: false
+
 
 ;; =================
 ;; Functions:
@@ -42,7 +43,7 @@
 (check-expect (has-landed? 0.25) false)
 (check-expect (has-landed? false) true)
 
-;(define (has-landed? r) false) ; stub
+;(define (has-landed? r) r) ; stub
 
 (define (has-landed? rd)
   (cond [(number? rd)
