@@ -72,7 +72,7 @@ class Sandwich implements IMeal {
 }
 
 // examples and tests for Meal
-class ExamplesMeal {
+class ExamplesIMeal {
   ExamplesMeal() { }
 
   // examples for soup
