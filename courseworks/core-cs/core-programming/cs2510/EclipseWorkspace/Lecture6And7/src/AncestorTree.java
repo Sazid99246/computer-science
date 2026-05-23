@@ -38,6 +38,16 @@ interface IAT {
 
   // To compute this ancestor tree's youngest grandparent
   IAT youngestGrandparent();
+
+  // To return the younger of this ancestor tree and the given ancestor tree
+  IAT youngerIAT(IAT other);
+
+  // To return either this ancestor tree (if this ancestor tree is younger
+  // than the given yob) or the given ancestry tree
+  IAT youngerIATHelp(IAT other, int otherYob);
+
+  // To compute the youngest parent of this ancestry tree
+  IAT youngestParent();
 }
 
 class Unknown implements IAT {
@@ -88,6 +98,32 @@ class Unknown implements IAT {
   // and its parents are well-formed
   public boolean wellFormedHelp(int childYob) {
     return true;
+  }
+
+  // To return the younger of this Unknown and the given ancestor tree
+  public IAT youngerIAT(IAT other) {
+    return other;
+  }
+
+  // To return either this Unknown (if this Unknown is younger than the
+  // given yob) or the given ancestry tree
+  public IAT youngerIATHelp(IAT other, int otherYob) {
+    return other;
+  }
+
+  // To compute the youngest parent of this Unknown
+  public IAT youngestParent() {
+    return new Unknown();
+  }
+
+  // To compute the youngest grandparent of this Unknown
+  public IAT youngestGrandparent() {
+    return new Unknown();
+  }
+
+  // To compute the names of all the known ancestors in this Unknown tree
+  public ILoString ancNames() {
+    return new MtLoString();
   }
 }
 
@@ -157,10 +193,42 @@ class Person implements IAT {
   public boolean wellFormed() {
     return this.mom.wellFormedHelp(this.yob) && this.dad.wellFormedHelp(this.yob);
   }
+
+  // To return the younger of this Person and the given ancestor tree
+  public IAT youngerIAT(IAT other) {
+    return other.youngerIATHelp(this, this.yob);
+  }
+
+  // To return either this Person (if this Person is younger than the
+  // given yob) or the given ancestry tree
+  public IAT youngerIATHelp(IAT other, int otherYob) {
+    /* same template as above */
+    if (this.yob > otherYob) {
+      return this;
+    }
+    else {
+      return other;
+    }
+  }
+
+  // To compute the youngest parent of this Person
+  public IAT youngestParent() {
+    return this.mom.youngerIAT(this.dad);
+  }
+
+  // To compute the youngest grandparent of this Person
+  public IAT youngestGrandparent() {
+    return this.mom.youngestParent().youngerIAT(this.dad.youngestParent());
+  }
+
+  // To compute the names of all the known ancestors in this Person tree
+  public ILoString ancNames() {
+    return new ConsLoString(this.name, this.mom.ancNames().append(this.dad.ancNames()));
+  }
 }
 
 interface ILoString {
-
+  ILoString append(ILoString other);
 }
 
 class ConsLoString implements ILoString {
@@ -171,10 +239,20 @@ class ConsLoString implements ILoString {
     this.first = first;
     this.rest = rest;
   }
+
+  // Appends another list by recursively digging down to the end of this one
+  public ILoString append(ILoString other) {
+    return new ConsLoString(this.first, this.rest.append(other));
+  }
 }
 
 class MtLoString implements ILoString {
   MtLoString() {
+  }
+
+  // Appending anything to an empty list just returns that other list
+  public ILoString append(ILoString other) {
+    return other;
   }
 }
 
