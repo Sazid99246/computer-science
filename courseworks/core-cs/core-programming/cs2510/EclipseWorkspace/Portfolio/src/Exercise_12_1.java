@@ -17,7 +17,7 @@ interface IShape {
   double distTo0();
 
   // Determines whether the given point is inside this shape
-  boolean in(CartPt p);
+  boolean in(CartPt2 p);
 
   // Computes the bounding box of this shape
   // The bounding box is represented as a Square
@@ -44,19 +44,19 @@ class CartPt {
   }
 
   // Determines whether this point and the given point are the same
-  boolean same(CartPt p) {
+  boolean same(CartPt2 p) {
     return (this.x == p.x) && (this.y == p.y);
   }
 
   // Computes the distance between this point and the given point
-  double distanceTo(CartPt p) {
+  double distanceTo(CartPt2 p) {
     return Math.sqrt((this.x - p.x) * (this.x - p.x) + (this.y - p.y) * (this.y - p.y));
   }
 
   // Creates a new point that is delta pixels up and left
   // from this point
-  CartPt translate(int delta) {
-    return new CartPt(this.x - delta, this.y - delta);
+  CartPt2 translate(int delta) {
+    return new CartPt2(this.x - delta, this.y - delta);
   }
 }
 
@@ -67,10 +67,10 @@ class CartPt {
 
 class Square implements IShape {
   int size;
-  CartPt loc;
+  CartPt2 loc;
 
   // Constructor for Square
-  Square(CartPt loc, int size) {
+  Square(CartPt2 loc, int size) {
     this.loc = loc;
     this.size = size;
   }
@@ -87,7 +87,7 @@ class Square implements IShape {
   }
 
   // Determines whether the given point is inside this square
-  public boolean in(CartPt p) {
+  public boolean in(CartPt2 p) {
     return this.between(this.loc.x, p.x, this.size) && this.between(this.loc.y, p.y, this.size);
   }
 
@@ -110,11 +110,11 @@ class Square implements IShape {
 // ============================================================
 
 class Circle implements IShape {
-  CartPt loc;
+  CartPt2 loc;
   int radius;
 
   // Constructor for Circle
-  Circle(CartPt loc, int radius) {
+  Circle(CartPt2 loc, int radius) {
     this.loc = loc;
     this.radius = radius;
   }
@@ -131,7 +131,7 @@ class Circle implements IShape {
   }
 
   // Determines whether the given point is inside this circle
-  public boolean in(CartPt p) {
+  public boolean in(CartPt2 p) {
     return this.loc.distanceTo(p) <= this.radius;
   }
 
@@ -147,10 +147,10 @@ class Circle implements IShape {
 // ============================================================
 
 class Dot implements IShape {
-  CartPt loc;
+  CartPt2 loc;
 
   // Constructor for Dot
-  Dot(CartPt loc) {
+  Dot(CartPt2 loc) {
     this.loc = loc;
   }
 
@@ -167,7 +167,7 @@ class Dot implements IShape {
 
   // Determines whether the given point is the same
   // as this dot's location
-  public boolean in(CartPt p) {
+  public boolean in(CartPt2 p) {
     return this.loc.same(p);
   }
 
@@ -188,15 +188,15 @@ class ExamplesShapes {
   // Examples of points
   // ==========================================================
 
-  CartPt origin = new CartPt(0, 0);
+  CartPt2 origin = new CartPt2(0, 0);
 
-  CartPt p1 = new CartPt(3, 4);
+  CartPt2 p1 = new CartPt2(3, 4);
 
-  CartPt p2 = new CartPt(10, 10);
+  CartPt2 p2 = new CartPt2(10, 10);
 
-  CartPt p3 = new CartPt(5, 5);
+  CartPt2 p3 = new CartPt2(5, 5);
 
-  CartPt p4 = new CartPt(20, 20);
+  CartPt2 p4 = new CartPt2(20, 20);
 
   // ==========================================================
   // Examples of shapes
@@ -225,7 +225,7 @@ class ExamplesShapes {
 
   // Tests same method for CartPt
   boolean testSame(Tester t) {
-    return t.checkExpect(origin.same(new CartPt(0, 0)), true)
+    return t.checkExpect(origin.same(new CartPt2(0, 0)), true)
         && t.checkExpect(origin.same(p1), false);
   }
 
@@ -237,7 +237,7 @@ class ExamplesShapes {
 
   // Tests translate method for CartPt
   boolean testTranslate(Tester t) {
-    return t.checkExpect(p3.translate(2), new CartPt(3, 3));
+    return t.checkExpect(p3.translate(2), new CartPt2(3, 3));
   }
 
   // ==========================================================
@@ -270,15 +270,15 @@ class ExamplesShapes {
     return
 
     // Tests for dots
-    t.checkExpect(d1.in(new CartPt(0, 0)), true) && t.checkExpect(d1.in(p1), false)
+    t.checkExpect(d1.in(new CartPt2(0, 0)), true) && t.checkExpect(d1.in(p1), false)
 
     // Tests for squares
-        && t.checkExpect(s1.in(new CartPt(5, 5)), true)
-        && t.checkExpect(s1.in(new CartPt(11, 11)), false)
+        && t.checkExpect(s1.in(new CartPt2(5, 5)), true)
+        && t.checkExpect(s1.in(new CartPt2(11, 11)), false)
 
         // Tests for circles
-        && t.checkExpect(c1.in(new CartPt(3, 4)), true)
-        && t.checkExpect(c1.in(new CartPt(6, 0)), false);
+        && t.checkExpect(c1.in(new CartPt2(3, 4)), true)
+        && t.checkExpect(c1.in(new CartPt2(6, 0)), false);
   }
 
   // ==========================================================
@@ -290,13 +290,13 @@ class ExamplesShapes {
     return
 
     // Bounding box of a dot
-    t.checkExpect(d1.bb(), new Square(new CartPt(0, 0), 0))
+    t.checkExpect(d1.bb(), new Square(new CartPt2(0, 0), 0))
 
         // Bounding box of a square
         && t.checkExpect(s1.bb(), s1)
 
         // Bounding box of a circle
-        && t.checkExpect(c1.bb(), new Square(new CartPt(-5, -5), 10));
+        && t.checkExpect(c1.bb(), new Square(new CartPt2(-5, -5), 10));
   }
 
   // ==========================================================
