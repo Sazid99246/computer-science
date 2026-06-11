@@ -1,14 +1,17 @@
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays; // <-- Fixed the "Arrays cannot be resolved" problem
 import java.util.function.Predicate;
 import tester.Tester;
 
-// Examples and verification suites for Deques
+// Examples and verification suites for Deques and Permutations
 public class Examples {
 
   Deque<String> deque1; // Empty list
   Deque<String> deque2; // Lexicographically sorted list
   Deque<String> deque3; // Unsorted list
+
+  Permutation predictableCipher; // Updated to Permutation
+  ArrayList<Character> customKey;
 
   // Initializes sample instances to baseline structures
   public void reset() {
@@ -31,6 +34,7 @@ public class Examples {
     Node<String> u2 = new Node<String>("abc", u3, s3);
     Node<String> u1 = new Node<String>("xyz", u2, s3);
 
+    // 4. Permutation Setup
     customKey = new ArrayList<Character>(Arrays.asList('b', 'e', 'a', 'c', 'd', 'f', 'g', 'h', 'i',
         'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'));
 
@@ -89,25 +93,19 @@ public class Examples {
   public void testFindAndRemoveNode(Tester t) {
     reset();
 
-    // Inline predicate check tracking strings matching "cde"
     Predicate<String> matchesCde = s -> s.equals("cde");
     Predicate<String> missingMatch = s -> s.equals("missing");
 
     ANode<String> foundNode = deque2.find(matchesCde);
     t.checkExpect(foundNode.getDataValue(), "cde");
 
-    // Missing match criteria defaults safely back to header element
     ANode<String> fallbackNode = deque2.find(missingMatch);
     t.checkExpect(fallbackNode, deque2.header);
 
-    // Mutative inline node drop execution
     deque2.removeNode(foundNode);
     t.checkExpect(deque2.size(), 3);
     t.checkExpect(deque2.find(matchesCde), deque2.header);
   }
-
-  Permutation predictableCipher;
-  ArrayList<Character> customKey;
 
   // Verifies the structural mapping substitution cycle rules
   public void testEncodingAndDecoding(Tester t) {
@@ -127,16 +125,12 @@ public class Examples {
     Permutation randomCipher1 = new Permutation();
     Permutation randomCipher2 = new Permutation();
 
-    // The key generated must contain exactly 26 items
     t.checkExpect(randomCipher1.code.size(), 26);
 
-    // Ensure all characters from the standard alphabet are accounted for
     for (char c : randomCipher1.alphabet) {
       t.checkExpect(randomCipher1.code.contains(c), true);
     }
 
-    // High probability safety assertion checking uniqueness over two distinct
-    // random instances
     t.checkExpect(randomCipher1.code.equals(randomCipher2.code), false);
   }
 }
