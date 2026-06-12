@@ -184,6 +184,34 @@ class ArrayUtils {
       return this.gen_binarySearchHelp(arr, target, comp, lowIdx, midIdx);
     }
   }
+
+  <U> ArrayList<U> buildList(int n, IFunc<Integer, U> func) {
+    ArrayList<U> result = new ArrayList<U>();
+    for (int i = 0; i < n; i = i + 1) {
+      result.add(func.apply(i));
+    }
+    return result;
+  }
+
+  // EFFECT: Modifies all the books in the given ArrayList, to capitalize their
+  // titles
+  void capitalizeTitles_good(ArrayList<Book> books) {
+    for (Book b : books) {
+      b.capitalizeTitle();
+    }
+  }
+
+//EFFECT: Modifies all the books in the given ArrayList, to capitalize their titles
+  void capitalizeTitles_ok(ArrayList<Book> books) {
+    for (int i = 0; i < books.size(); i = i + 1) {
+      // get the old book...
+      Book oldB = books.get(i);
+      // ... construct the new book ...
+      Book newB = new Book(oldB.title.toUpperCase(), oldB.author);
+      // and set it in place of the old book, at the current index
+      books.set(i, newB);
+    }
+  }
 }
 
 class ExampleArrayLists {
@@ -281,5 +309,19 @@ class ExampleArrayLists {
 
     // Unshuffling [1, 2, 3, 4] pulls indices 0,2 then 1,3 -> [1, 3, 2, 4]
     t.checkExpect(au.unshuffle(expectedInterleave), expectedUnshuffled);
+  }
+}
+
+class ExamplesCapitalize {
+  void testCapitalizeTitles_bad(Tester t) {
+    // Initialize data:
+    Author mf = new Author("Matthias Felleisen", 1953);
+    Book htdp = new Book("How to Design Programs", mf);
+    ArrayList<Book> books = new ArrayList<Book>();
+    books.add(htdp);
+    // Modify it
+    (new ArrayUtils()).capitalizeTitles_bad(books);
+    // Test for changes
+    t.checkExpect(books.get(0).title, "HOW TO DESIGN PROGRAMS");
   }
 }
