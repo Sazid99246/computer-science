@@ -80,6 +80,25 @@ class ArrayUtils {
     return minIdx;
   }
 
+  public int findMin(ArrayList<Integer> numbers) {
+    if (numbers.isEmpty()) {
+      throw new RuntimeException("Cannot find minimum of an empty list");
+    }
+
+    int minVal = numbers.get(0);
+    int i = 1; // 1. Initialize the index counter outside the loop
+
+    // 2. The while loop handles the boundary condition check
+    while (i < numbers.size()) {
+      if (numbers.get(i) < minVal) {
+        minVal = numbers.get(i);
+      }
+      i++; // 3. Manually increment the counter at the very end of the block
+    }
+
+    return minVal;
+  }
+
   // EFFECT: Sorts the given list of strings alphabetically using selection sort
   void sort(ArrayList<String> arr) {
     for (int idx = 0; idx < arr.size(); idx++) {
@@ -212,6 +231,18 @@ class ArrayUtils {
       books.set(i, newB);
     }
   }
+
+  boolean getsToOne(int n) {
+    while (n > 1) {
+      if (n % 2 == 0) {
+        n = n / 2;
+      }
+      else {
+        n = 3 * n + 1;
+      }
+    }
+    return true;
+  }
 }
 
 class ExampleArrayLists {
@@ -320,7 +351,7 @@ class ExamplesCapitalize {
     ArrayList<Book> books = new ArrayList<Book>();
     books.add(htdp);
     // Modify it
-    (new ArrayUtils()).capitalizeTitles_bad(books);
+    (new ArrayUtils()).capitalizeTitles_good(books);
     // Test for changes
     t.checkExpect(books.get(0).title, "HOW TO DESIGN PROGRAMS");
   }
