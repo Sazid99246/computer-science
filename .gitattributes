@@ -1,3 +1,1 @@
 *.rkt linguist-language=Racket
-*.scm linguist-language=Racket
-*.ss linguist-language=Racket
