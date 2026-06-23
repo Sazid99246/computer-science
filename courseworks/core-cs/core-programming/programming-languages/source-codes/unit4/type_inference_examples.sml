@@ -1,0 +1,38 @@
+(*
+  f : T1 -> T2 [must be a function; all functions take 1 arg]
+  X : T1
+
+  y : T3
+  Z : T4
+
+  T1 = T3 * T4 [else pattern match does not type-check]
+  T3 = int [abs has type int -> int]
+  T4 = int [because we added z to an irk]
+  So T1 = int * int
+  So (abs y) + z : int, so let-expression : int, so body : int
+  T2 = int
+  f : int * int -> int 
+*)
+
+fun f x =
+    let val (y, z) = x in
+	(abs y) + z
+    end
+
+(*
+  sum : T1 -> T2
+  xs : T1
+
+  x : T3
+  xs : T3 list [pattern match a T1]
+
+  T1 = T3 list
+  T2 = int [because 0 might be returned]
+  T3 = int [because x:T3 and we add x to something]
+  T1 = int list
+  T3 = int
+*)
+fun sum xs =
+    case xs of
+	[] => 0
+     | x::xs' => x + (sum xs')
