@@ -1,8 +1,8 @@
-////
-//// YOU SHOULD NOT MODIFY THIS FILE
-////
-//// (You don't need to submit it, either.)
-////
+/// /
+/// / YOU SHOULD NOT MODIFY THIS FILE
+/// /
+/// / (You don't need to submit it, either.)
+/// /
 
 package cs3500.hw01.publication;
 

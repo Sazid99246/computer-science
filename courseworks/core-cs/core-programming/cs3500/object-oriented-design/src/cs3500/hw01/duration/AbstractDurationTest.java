@@ -5,7 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-/** Tests for {@link Duration}s. */
+/**
+ * Tests for {@link Duration}s.
+ */
 public abstract class AbstractDurationTest {
   /*
     Leave this section alone: It contains two abstract methods to
@@ -13,12 +15,13 @@ public abstract class AbstractDurationTest {
     will supply particular implementations of Duration to be used within 
     your tests.
    */
+
   /**
    * Constructs an instance of the class under test representing the duration
    * given in weeks, days and hours.
    *
    * @param weeks the weeks in the duration
-   * @param days the days in the duration
+   * @param days  the days in the duration
    * @param hours the hours in the duration
    * @return an instance of the class under test
    */
@@ -66,8 +69,6 @@ public abstract class AbstractDurationTest {
   }
 
 
-
-
   // The interesting tests for Durations begin here.
   // Note how all the tests are defined in terms of wdh(...) and hours(...),
   // rather than being defined using "new CompactDuration(...)"
@@ -81,7 +82,6 @@ public abstract class AbstractDurationTest {
   // It's almost like AbstractDurationTest is a "factory" for making tests,
   // and in fact, this is a variation on a pattern we'll see again later
   // in the course.
-
 
 
   static long s1 = 328375982;
@@ -148,32 +148,32 @@ public abstract class AbstractDurationTest {
     assertEquals(s2, hours(s2).inHours());
 
     assertEquals(hours(s1),
-                  hours(hours(s1).inHours()));
+            hours(hours(s1).inHours()));
     assertEquals(hours(s2),
-                  hours(hours(s2).inHours()));
+            hours(hours(s2).inHours()));
 
     assertEquals(d1_23_45,
-                  hours(d1_23_45.inHours()));
+            hours(d1_23_45.inHours()));
     assertEquals(d2_03_00,
-                  hours(d2_03_00.inHours()));
+            hours(d2_03_00.inHours()));
     assertEquals(d457_03_00,
-                  hours(d457_03_00.inHours()));
+            hours(d457_03_00.inHours()));
   }
 
   @Test
   public void _1_23_03_plus_2_14_45_is_3_37_48() {
     assertEquals(wdh(3, 37, 48),
-                 wdh(1, 23, 3).plus(wdh(2, 14, 45)));
+            wdh(1, 23, 3).plus(wdh(2, 14, 45)));
   }
 
   @Test
   public void plusCarries() {
     assertEquals(wdh(8, 5, 6),
-                 wdh(1, 23, 33).plus(wdh(2, 14, 45)));
+            wdh(1, 23, 33).plus(wdh(2, 14, 45)));
     assertEquals(wdh(14, 4, 0),
-                 wdh(1, 23, 3).plus(wdh(2, 56, 45)));
+            wdh(1, 23, 3).plus(wdh(2, 56, 45)));
     assertEquals(wdh(14, 5, 6),
-                 wdh(1, 23, 33).plus(wdh(2, 56, 45)));
+            wdh(1, 23, 33).plus(wdh(2, 56, 45)));
   }
 
   @Test

@@ -1,9 +1,9 @@
-////
-//// DO NOT MODIFY THIS FILE
-////
-//// You don't need to submit it, but you should make sure it compiles.
-//// Further explanation appears below.
-////
+/// /
+/// / DO NOT MODIFY THIS FILE
+/// /
+/// / You don't need to submit it, but you should make sure it compiles.
+/// / Further explanation appears below.
+/// /
 
 import cs3500.hw01.duration.Duration;
 import cs3500.hw01.publication.Publication;
@@ -19,7 +19,7 @@ public class Hw01TypeChecks {
                   "Lerner", "Benjamin",
                   "The 3rd Summit on Advances In Programming Languages",
                   "Providence, RI", 2019, "LIPIcs"
-                  );
+          );
 
   static void durationHasFormatMethod(Duration duration) {
     String result = duration.format("Template");

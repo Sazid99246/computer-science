@@ -12,7 +12,7 @@ public final class DurationImpl implements Duration {
    * Constructs a duration in terms of its length in hours, minutes, and
    * seconds.
    *
-   * @param hours the number of hours
+   * @param hours   the number of hours
    * @param minutes the number of minutes
    * @param seconds the number of seconds
    * @throws IllegalArgumentException if any argument is negative
@@ -79,7 +79,7 @@ public final class DurationImpl implements Duration {
       return true;
     }
 
-    if (! (that instanceof Duration)) {
+    if (!(that instanceof Duration)) {
       return false;
     }
 

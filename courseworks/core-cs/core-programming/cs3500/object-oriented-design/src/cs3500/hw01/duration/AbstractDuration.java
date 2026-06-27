@@ -50,9 +50,9 @@ abstract class AbstractDuration implements Duration {
    * Converts an unpacked weeks-days-hours duration to its length in
    * hours.
    *
-   * @param weeks   the number of weeks
-   * @param days    the number of days
-   * @param hours   the number of hours
+   * @param weeks the number of weeks
+   * @param days  the number of days
+   * @param hours the number of hours
    * @return the duration in hours
    */
   protected static long inHours(int weeks, int days, int hours) {
@@ -63,9 +63,9 @@ abstract class AbstractDuration implements Duration {
    * Formats an unpacked weeks-days-hours duration in the same {@code
    * W:D:HH} format that {@link Duration#asWdh()} returns.
    *
-   * @param weeks   the number of weeks
-   * @param days    the number of days
-   * @param hours   the number of hours
+   * @param weeks the number of weeks
+   * @param days  the number of days
+   * @param hours the number of hours
    * @return formatted duration
    * @throws IllegalArgumentException if any argument is negative
    */
@@ -78,9 +78,9 @@ abstract class AbstractDuration implements Duration {
    * factoring this out overkill? Or should we also factor out the {@code
    * inHours < 0} check in the two unary constructors? Discuss.
    *
-   * @param weeks   the number of weeks
-   * @param days    the number of days
-   * @param hours   the number of hours
+   * @param weeks the number of weeks
+   * @param days  the number of days
+   * @param hours the number of hours
    * @throws IllegalArgumentException if any argument is negative
    */
   protected static void ensureWdh(int weeks, int days, int hours) {

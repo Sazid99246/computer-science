@@ -48,7 +48,7 @@ public final class CompactDuration extends AbstractDuration {
   @Override
   public String asWdh() {
     return asWdh(weeksOf(inHours),
-                 daysOf(inHours),
-                 hoursOf(inHours));
+            daysOf(inHours),
+            hoursOf(inHours));
   }
 }

@@ -4,9 +4,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/** Tests for the format method of {@link Duration}s. 
- Add your tests to this class to assure that your format
- method works properly
+/**
+ * Tests for the format method of {@link Duration}s.
+ * Add your tests to this class to assure that your format
+ * method works properly
  */
 public abstract class AbstractDurationFormatTest {
   @Test
@@ -96,12 +97,13 @@ public abstract class AbstractDurationFormatTest {
     will supply particular implementations of Duration to be used within
     your tests.
    */
+
   /**
    * Constructs an instance of the class under test representing the duration
    * given in weeks, days and hours
    *
    * @param weeks the weeks in the duration
-   * @param days the days in the duration
+   * @param days  the days in the duration
    * @param hours the hours in the duration
    * @return an instance of the class under test
    */
@@ -116,7 +118,8 @@ public abstract class AbstractDurationFormatTest {
    */
   protected abstract Duration hours(long inHours);
 
-  /** * A nested testing factory class, that uses {@link WdhDuration} for
+  /**
+   * A nested testing factory class, that uses {@link WdhDuration} for
    * all of its test cases.
    */
   public static final class WdhDurationTest extends AbstractDurationFormatTest {
@@ -131,7 +134,8 @@ public abstract class AbstractDurationFormatTest {
     }
   }
 
-  /** * A nested testing factory class, that uses {@link CompactDuration} for
+  /**
+   * A nested testing factory class, that uses {@link CompactDuration} for
    * all of its test cases.
    */
   public static final class CompactDurationTest extends AbstractDurationFormatTest {
