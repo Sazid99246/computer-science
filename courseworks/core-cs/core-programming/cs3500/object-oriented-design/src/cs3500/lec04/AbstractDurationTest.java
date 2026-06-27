@@ -1,16 +1,46 @@
+package cs3500.lec04;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-/** Tests for {@link DurationImpl}. */
-public class DurationImplTest {
+/** Tests for {@link Duration}s. */
+public abstract class AbstractDurationTest {
+  protected abstract Duration hms(int hours, int minutes, int seconds);
+
+  protected abstract Duration sec(long inSeconds);
+
+  public final static class HmsDurationTest extends AbstractDurationTest {
+    @Override
+    protected Duration hms(int hours, int minutes, int seconds) {
+      return new HmsDuration(hours, minutes, seconds);
+    }
+
+    @Override
+    protected Duration sec(long inSeconds) {
+      return new HmsDuration(inSeconds);
+    }
+  }
+
+  public final static class CompactDurationTest extends AbstractDurationTest {
+    @Override
+    protected Duration hms(int hours, int minutes, int seconds) {
+      return new CompactDuration(hours, minutes, seconds);
+    }
+
+    @Override
+    protected Duration sec(long inSeconds) {
+      return new CompactDuration(inSeconds);
+    }
+  }
+
   static long s1 = 328375982;
   static long s2 = 299699;
 
-  static Duration d1_23_45 = hms(1, 23, 45);
-  static Duration d2_03_00 = hms(2, 3, 0);
-  static Duration d457_03_00 = hms(457, 3, 0);
+  Duration d1_23_45 = hms(1, 23, 45);
+  Duration d2_03_00 = hms(2, 3, 0);
+  Duration d457_03_00 = hms(457, 3, 0);
 
   @Test
   public void zeroIsZero() {
@@ -101,13 +131,5 @@ public class DurationImplTest {
   public void addWorks() {
     assertEquals(s1 + s2, sec(s1).plus(sec(s2)).inSeconds());
     assertEquals(2 * s1 + s2, sec(2 * s1).plus(sec(s2)).inSeconds());
-  }
-
-  static Duration hms(int hours, int minutes, int seconds) {
-    return new DurationImpl(hours, minutes, seconds);
-  }
-
-  static Duration sec(long inSeconds) {
-    return new DurationImpl(inSeconds);
   }
 }

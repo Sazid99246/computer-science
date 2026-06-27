@@ -1,10 +1,12 @@
+package cs3500.lec04;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 /** Tests for {@link DurationImpl}. */
-public class CompactDurationTest {
+public class DurationImplTest {
   static long s1 = 328375982;
   static long s2 = 299699;
 
@@ -53,6 +55,16 @@ public class CompactDurationTest {
     assertEquals("4:34:34", hms(2, 33, 7294).asHms());
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void hmsConstructorDisallowsNegative() {
+    hms(2, 4, -9);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void secondsConstructorDisallowsNegative() {
+    sec(-1);
+  }
+
   @Test
   public void inSecondsIsInverseOfSecondsConstructor() {
     assertEquals(s1, sec(s1).inSeconds());
@@ -94,10 +106,10 @@ public class CompactDurationTest {
   }
 
   static Duration hms(int hours, int minutes, int seconds) {
-    return new CompactDuration(hours, minutes, seconds);
+    return new DurationImpl(hours, minutes, seconds);
   }
 
   static Duration sec(long inSeconds) {
-    return new CompactDuration(inSeconds);
+    return new DurationImpl(inSeconds);
   }
 }

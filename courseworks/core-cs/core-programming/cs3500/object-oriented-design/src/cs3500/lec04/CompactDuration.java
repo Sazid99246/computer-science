@@ -1,3 +1,5 @@
+package cs3500.lec04;
+
 /**
  * Durations represented compactly, with a range of 0 to
  * 2<sup>63</sup>-1 seconds.

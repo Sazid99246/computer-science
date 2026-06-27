@@ -1,3 +1,5 @@
+package cs3500.lec02;
+
 /**
  * Specifies operations for formatting citations from bibliographic data.
  */

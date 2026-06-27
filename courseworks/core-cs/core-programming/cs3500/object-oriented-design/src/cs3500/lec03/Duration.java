@@ -1,3 +1,5 @@
+package cs3500.lec03;
+
 /**
  * Durations, with a resolution of seconds. All durations are non-negative.
  *

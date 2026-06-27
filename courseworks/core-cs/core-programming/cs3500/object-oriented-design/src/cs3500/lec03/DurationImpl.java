@@ -1,3 +1,5 @@
+package cs3500.lec03;
+
 /**
  * Durations represented as hours, minutes, and seconds.
  */

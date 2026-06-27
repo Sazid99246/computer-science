@@ -1,3 +1,5 @@
+package cs3500.lec02;
+
 /**
  * Represents bibliographic information for journal articles.
  */

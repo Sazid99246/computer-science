@@ -1,3 +1,5 @@
+package cs3500.lec04;
+
 /**
  * Abstract base class for implementations of {@link Duration}.
  */
