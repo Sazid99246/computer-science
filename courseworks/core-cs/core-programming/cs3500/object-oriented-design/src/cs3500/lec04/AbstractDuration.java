@@ -24,7 +24,7 @@ abstract class AbstractDuration implements Duration {
       return true;
     }
 
-    if (! (that instanceof Duration)) {
+    if (!(that instanceof Duration)) {
       return false;
     }
 
@@ -50,7 +50,7 @@ abstract class AbstractDuration implements Duration {
    * Converts an unpacked hours-minutes-seconds duration to its length
    * in seconds.
    *
-   * @param hours the number of hours
+   * @param hours   the number of hours
    * @param minutes the number of minutes
    * @param seconds the number of seconds
    * @return the duration in seconds
@@ -64,7 +64,7 @@ abstract class AbstractDuration implements Duration {
    * {@code H:MM:SS} format that {@link Duration#asHms()} returns.
    * Assumes that
    *
-   * @param hours the number of hours
+   * @param hours   the number of hours
    * @param minutes the number of minutes
    * @param seconds the number of seconds
    * @return formatted duration
@@ -79,7 +79,7 @@ abstract class AbstractDuration implements Duration {
    * Is factoring this out overkill? Or should we also factor out the
    * {@code inSeconds < 0} check in the two unary constructors? Discuss.
    *
-   * @param hours the number of hours
+   * @param hours   the number of hours
    * @param minutes the number of minutes
    * @param seconds the number of seconds
    * @throws IllegalArgumentException if any argument is negative
@@ -96,7 +96,7 @@ abstract class AbstractDuration implements Duration {
    * @param inSeconds the total number of seconds
    * @return the number of hours
    * @throws ArithmeticException if the correct result cannot fit in an
-   *          {@code int}.
+   *                             {@code int}.
    */
   protected static int hoursOf(long inSeconds) {
     if (inSeconds / 3600 > Integer.MAX_VALUE) {

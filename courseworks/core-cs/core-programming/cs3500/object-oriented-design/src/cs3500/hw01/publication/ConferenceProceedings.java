@@ -27,13 +27,13 @@ public class ConferenceProceedings implements Publication {
 
   @Override
   public String citeApa() {
-    return editorLastName + ", " + editorFirstName + ", editor. " + title + ". " + location + ", " + publisher + ", " + year + ".";
+    // Extract the first initial from the first name
+    char firstInitial = (editorFirstName != null && !editorFirstName.isEmpty()) ? editorFirstName.charAt(0) : ' ';
+    return editorLastName + ", " + firstInitial + ". (Ed.). (" + year + "). " + title + ". " + publisher + ".";
   }
 
   @Override
   public String citeMla() {
-    // Extract the first initial from the first name
-    char firstInitial = (editorFirstName != null && !editorFirstName.isEmpty()) ? editorFirstName.charAt(0) : ' ';
-    return editorLastName + ", " + firstInitial + ". (Ed.). (" + year + "). " + title + ". " + publisher + ".";
+    return editorLastName + ", " + editorFirstName + ", editor. " + title + ". " + location + ", " + publisher + ", " + year + ".";
   }
 }

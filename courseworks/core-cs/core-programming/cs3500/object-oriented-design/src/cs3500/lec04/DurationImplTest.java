@@ -5,7 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-/** Tests for {@link DurationImpl}. */
+/**
+ * Tests for {@link DurationImpl}.
+ */
 public class DurationImplTest {
   static long s1 = 328375982;
   static long s2 = 299699;
@@ -71,32 +73,32 @@ public class DurationImplTest {
     assertEquals(s2, sec(s2).inSeconds());
 
     assertEquals(sec(s1),
-                  sec(sec(s1).inSeconds()));
+            sec(sec(s1).inSeconds()));
     assertEquals(sec(s2),
-                  sec(sec(s2).inSeconds()));
+            sec(sec(s2).inSeconds()));
 
     assertEquals(d1_23_45,
-                  sec(d1_23_45.inSeconds()));
+            sec(d1_23_45.inSeconds()));
     assertEquals(d2_03_00,
-                  sec(d2_03_00.inSeconds()));
+            sec(d2_03_00.inSeconds()));
     assertEquals(d457_03_00,
-                  sec(d457_03_00.inSeconds()));
+            sec(d457_03_00.inSeconds()));
   }
 
   @Test
   public void _1_23_03_plus_2_14_45_is_3_37_48() {
     assertEquals(hms(3, 37, 48),
-                  hms(1, 23, 3).plus(hms(2, 14, 45)));
+            hms(1, 23, 3).plus(hms(2, 14, 45)));
   }
 
   @Test
   public void plusCarries() {
     assertEquals(hms(3, 38, 18),
-                  hms(1, 23, 33).plus(hms(2, 14, 45)));
+            hms(1, 23, 33).plus(hms(2, 14, 45)));
     assertEquals(hms(4, 19, 48),
-                  hms(1, 23, 3).plus(hms(2, 56, 45)));
+            hms(1, 23, 3).plus(hms(2, 56, 45)));
     assertEquals(hms(4, 20, 18),
-                  hms(1, 23, 33).plus(hms(2, 56, 45)));
+            hms(1, 23, 33).plus(hms(2, 56, 45)));
   }
 
   @Test
