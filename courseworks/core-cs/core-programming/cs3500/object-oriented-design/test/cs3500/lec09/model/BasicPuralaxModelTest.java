@@ -1,18 +1,23 @@
 package cs3500.lec09.model;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import cs3500.lec09.common.GameColor;
 import cs3500.lec09.common.IColor;
-import java.util.ArrayList;
-import java.util.List;
 import cs3500.lec09.model.tile.EmptyTile;
 import cs3500.lec09.model.tile.NestedTile;
 import cs3500.lec09.model.tile.PainterTile;
 import cs3500.lec09.model.tile.SimpleTile;
 import cs3500.lec09.model.tile.Tile;
 import cs3500.lec09.model.tile.WallTile;
-import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BasicPuralaxModelTest {
 

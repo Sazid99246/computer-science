@@ -1,8 +1,9 @@
 package cs3500.lec09;
 
+import java.io.InputStreamReader;
+
 import cs3500.lec09.controller.BasicPuralaxController;
 import cs3500.lec09.controller.PuralaxController;
-import java.io.InputStreamReader;
 import cs3500.lec09.model.BasicModelBuilder;
 import cs3500.lec09.model.ModelBuilder;
 import cs3500.lec09.model.PuralaxModel;
