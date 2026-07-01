@@ -29,6 +29,6 @@ public class InstrumentedIntSet1
     super.addAll(values);
 
     // Update the count for all the elements we added:
-    addCount += values.length;
+//    addCount += values.length;
   }
 }

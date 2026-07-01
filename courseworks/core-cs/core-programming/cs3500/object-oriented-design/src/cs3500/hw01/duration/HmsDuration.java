@@ -1,22 +1,21 @@
 package cs3500.hw01.duration;
 
 /**
- * Durations represented compactly, with a range of 0 to
- * 2<sup>63</sup>-1 seconds.
+ * Durations represented as hours, minutes, and seconds.
  */
-public final class CompactDuration extends AbstractDuration {
+public final class HmsDuration extends AbstractDuration {
   /**
    * Constructs a duration in terms of its length in hours, minutes, and
    * seconds.
    *
    * @param hours the number of hours
    * @param minutes the number of minutes
-   * @param seconds the number of inSeconds
+   * @param seconds the number of seconds
    * @throws IllegalArgumentException if any argument is negative
    */
-  public CompactDuration(int hours, int minutes, int seconds) {
+  public HmsDuration(int hours, int minutes, int seconds) {
+    this(inSeconds(hours, minutes, seconds));
     ensureHms(hours, minutes, seconds);
-    this.inSeconds = inSeconds(hours, minutes, seconds);
   }
 
   /**
@@ -25,31 +24,32 @@ public final class CompactDuration extends AbstractDuration {
    * @param inSeconds the number of seconds (non-negative)
    * @throws IllegalArgumentException {@code inSeconds} is negative
    */
-  public CompactDuration(long inSeconds) {
+  public HmsDuration(long inSeconds) {
     if (inSeconds < 0) {
       throw new IllegalArgumentException("must be non-negative");
     }
 
-    this.inSeconds = inSeconds;
+    seconds = secondsOf(inSeconds);
+    minutes = minutesOf(inSeconds);
+    hours   = hoursOf(inSeconds);
   }
 
-  private final long inSeconds;
+  private final int hours;
+  private final int minutes;
+  private final int seconds;
 
   @Override
-  protected Duration fromSeconds(long seconds) {
-    return new CompactDuration(seconds);
+  protected AbstractDuration fromSeconds(long seconds) {
+    return new HmsDuration(seconds);
   }
 
   @Override
   public long inSeconds() {
-    return inSeconds;
+    return inSeconds(hours, minutes, seconds);
   }
 
   @Override
   public String asHms() {
-    return String.format("%d:%02d:%02d",
-                          hoursOf(inSeconds),
-                          minutesOf(inSeconds),
-                          secondsOf(inSeconds));
+    return asHms(hours, minutes, seconds);
   }
 }

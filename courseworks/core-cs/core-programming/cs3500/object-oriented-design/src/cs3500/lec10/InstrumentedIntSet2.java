@@ -27,8 +27,6 @@ public class InstrumentedIntSet2
   @Override
   public void addAll(int... values) {
     super.addAll(values);
-    // Don't need to update the count because apparently super.addAll() calls
-    // super.add();
-    // addCount += values.length;
+    addCount += values.length; // Uncomment this to accurately record the batch addition
   }
 }

@@ -1,21 +1,22 @@
-/// /
-/// / YOU SHOULD NOT MODIFY THIS FILE
-/// /
-/// / (You don't need to submit it, either.)
-/// /
-
+////
+//// YOU SHOULD NOT MODIFY THIS FILE
+////
+//// (You don't need to submit it, either.)
+////
 package cs3500.hw01.duration;
 
+import cs3500.lec11.StringAccumulator;
+
 /**
- * Durations, with a resolution of hours. All durations are non-negative.
+ * Durations, with a resolution of seconds. All durations are non-negative.
  *
  * <p>Different {@code Duration} implementations should work together,
  * meaning that:
  *
  * <ul>
- *   <li>Two durations must be equal if they have the same number of hours.
+ *   <li>Two durations must be equal if they have the same number of seconds.
  *   <li>The hash code of a duration is the result of calling
- *        {@link Long#hashCode(long)} on its length in hours.
+ *        {@link Long#hashCode(long)} on its length in seconds.
  * </ul>
  */
 public interface Duration extends Comparable<Duration> {
@@ -31,7 +32,7 @@ public interface Duration extends Comparable<Duration> {
    * replaced by textual representations of the indicated values for
    * {@code this} duration.
    *
-   * <p>More precisely, a template is a non-null sequence of uninterpreted
+   * <p>More precisely, a template is a sequence of uninterpreted
    * characters and two-character format specifiers. An uninterpreted
    * character may be any character but {@code '%'}. A format specifier
    * may be any of the two-character codes defined in the table below,
@@ -62,20 +63,20 @@ public interface Duration extends Comparable<Duration> {
    *       <th>Meaning</th>
    *     </tr>
    *   </thead>
-   *   <tr><td>{@code %t}</td><td>the whole duration in hours</td></tr>
-   *   <tr><td>{@code %w}</td><td>the weeks component of the decomposed
-   *     duration</td></tr>
-   *   <tr><td>{@code %W}</td><td>the weeks component of the decomposed
-   *     duration, padded to 2 digits with leading zeros (<i>e.g.</i>,
-   *     {@code 05} or {@code 11})</td></tr>
-   *   <tr><td>{@code %d}</td><td>the days component of the decomposed
-   *     duration</td></tr>
-   *   <tr><td>{@code %D}</td><td>the days component of the decomposed
-   *     duration, padded to 2 digits with leading zeros (<i>e.g.</i>,
-   *     {@code 05} or {@code 56})</td></tr>
+   *   <tr><td>{@code %t}</td><td>the whole duration in seconds</td></tr>
    *   <tr><td>{@code %h}</td><td>the hours component of the decomposed
    *     duration</td></tr>
    *   <tr><td>{@code %H}</td><td>the hours component of the decomposed
+   *     duration, padded to 2 digits with leading zeros (<i>e.g.</i>,
+   *     {@code 05} or {@code 11})</td></tr>
+   *   <tr><td>{@code %m}</td><td>the minutes component of the decomposed
+   *     duration</td></tr>
+   *   <tr><td>{@code %M}</td><td>the minutes component of the decomposed
+   *     duration, padded to 2 digits with leading zeros (<i>e.g.</i>,
+   *     {@code 05} or {@code 56})</td></tr>
+   *   <tr><td>{@code %s}</td><td>the seconds component of the decomposed
+   *     duration</td></tr>
+   *   <tr><td>{@code %S}</td><td>the seconds component of the decomposed
    *     duration, padded to 2 digits with leading zeros (<i>e.g.</i>,
    *     {@code 05} or {@code 56})</td></tr>
    *   <tr><td>{@code %%}</td><td>a literal percent sign ({@code %})</td></tr>
@@ -85,25 +86,39 @@ public interface Duration extends Comparable<Duration> {
    * @param template the template
    * @return the formatted string
    * @throws IllegalArgumentException if {@code template} is malformed
+   * @see #format(StringAccumulator, String)
    */
   String format(String template);
 
   /**
-   * Gets the total duration in hours.
+   * Formats a duration as a string by substituting for format
+   * specifiers in the template. The template and its rules are as described
+   * for {@link #format(String)}.
    *
-   * @return the number of hours (non-negative)
+   * @param acc the string accumulator to write to
+   * @param template the template
+   * @return this, for method chaining
+   * @throws IllegalArgumentException if {@code template} is malformed
+   * @see #format(String)
    */
-  long inHours();
+  <T extends StringAccumulator> T format(T acc, String template);
 
   /**
-   * Formats this duration in the form {@code W:D:HH} where the hours
-   * are zero-padded to two digits, but the weeks and days are not.
-   * The duration should be in canonical form, meaning that the hours
-   * are less than 24 and the days are less than 7.
+   * Gets the total duration in seconds.
    *
-   * @return this duration formatted in weeks, days and hours
+   * @return the number of seconds (non-negative)
    */
-  String asWdh();
+  long inSeconds();
+
+  /**
+   * Formats this duration in the form {@code H:MM:SS} where the hours and
+   * minutes are both zero-padded to two digits, but the hours are not.
+   * The duration should be in canonical form, meaning that both the minutes
+   * and the seconds are less than 60.
+   *
+   * @return this duration formatted in hours, minutes, and seconds
+   */
+  String asHms();
 
   /**
    * Returns the sum of two durations.

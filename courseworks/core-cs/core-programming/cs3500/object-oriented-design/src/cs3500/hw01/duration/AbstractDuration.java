@@ -1,21 +1,105 @@
 package cs3500.hw01.duration;
 
+import cs3500.lec11.StringAccumulator;
+
 /**
  * Abstract base class for implementations of {@link Duration}.
  */
 abstract class AbstractDuration implements Duration {
   /**
-   * Constructs a {@link Duration} in a manner selected by concrete subclasses
-   * of this class.
+   * Converts an unpacked hours-minutes-seconds duration to its length
+   * in seconds.
    *
-   * @param inHours the length in hours
+   * @param hours   the number of hours
+   * @param minutes the number of minutes
+   * @param seconds the number of seconds
+   * @return the duration in seconds
+   */
+  protected static long inSeconds(int hours, int minutes, int seconds) {
+    return 3600 * hours + 60 * minutes + seconds;
+  }
+
+  /**
+   * Formats an unpacked hours-minutes-seconds duration in the same
+   * {@code H:MM:SS} format that {@link Duration#asHms()} returns.
+   * Assumes that
+   *
+   * @param hours   the number of hours
+   * @param minutes the number of minutes
+   * @param seconds the number of seconds
+   * @return formatted duration
+   * @throws IllegalArgumentException if any argument is negative
+   */
+  protected static String asHms(int hours, int minutes, int seconds) {
+    return String.format("%d:%02d:%02d", hours, minutes, seconds);
+  }
+
+  /**
+   * Ensures that the hours, minutes, and seconds are all non-negative.
+   * Is factoring this out overkill? Or should we also factor out the
+   * {@code inSeconds < 0} check in the two unary constructors? Discuss.
+   *
+   * @param hours   the number of hours
+   * @param minutes the number of minutes
+   * @param seconds the number of seconds
+   * @throws IllegalArgumentException if any argument is negative
+   */
+  protected static void ensureHms(int hours, int minutes, int seconds) {
+    if (hours < 0 || minutes < 0 || seconds < 0) {
+      throw new IllegalArgumentException("must be non-negative");
+    }
+  }
+
+  /**
+   * Returns the number of whole hours in the given number of seconds.
+   *
+   * @param inSeconds the total number of seconds
+   * @return the number of hours
+   * @throws ArithmeticException if the correct result cannot fit in an
+   *                             {@code int}.
+   */
+  protected static int hoursOf(long inSeconds) {
+    if (inSeconds / 3600 > Integer.MAX_VALUE) {
+      throw new ArithmeticException("result cannot fit in type");
+    }
+
+    return (int) (inSeconds / 3600);
+  }
+
+  /**
+   * Returns the number of whole minutes in the given number of seconds, less
+   * the number of whole hours.
+   *
+   * @param inSeconds the total number of seconds
+   * @return the number of remaining minutes
+   */
+  protected static int minutesOf(long inSeconds) {
+    return (int) (inSeconds / 60 % 60);
+  }
+
+  /**
+   * Returns the number of seconds remaining after all full minutes are
+   * removed from the given number of seconds.
+   *
+   * @param inSeconds the total number of seconds
+   * @return the number of remaining seconds
+   */
+  protected static int secondsOf(long inSeconds) {
+    return (int) (inSeconds % 60);
+  }
+
+  /**
+   * Constructs a {@link Duration} in a manner selected by concrete
+   * subclasses of this class.
+   *
+   * @param inSeconds the length in seconds
    * @return the new {@code Duration}
    */
-  protected abstract Duration fromHours(long inHours);
+  protected abstract Duration fromSeconds(long inSeconds);
 
   @Override
   public String toString() {
-    return asWdh();
+    return asHms();
   }
 
   @Override
@@ -28,165 +112,94 @@ abstract class AbstractDuration implements Duration {
       return false;
     }
 
-    return ((Duration) that).inHours() == this.inHours();
+    return ((Duration) that).inSeconds() == this.inSeconds();
   }
 
   @Override
   public int hashCode() {
-    return Long.hashCode(inHours());
+    return Long.hashCode(inSeconds());
   }
 
   @Override
   public int compareTo(Duration that) {
-    return Long.compare(this.inHours(), that.inHours());
+    return Long.compare(this.inSeconds(), that.inSeconds());
   }
 
   @Override
   public Duration plus(Duration that) {
-    return fromHours(this.inHours() + that.inHours());
-  }
-
-  /**
-   * Converts an unpacked weeks-days-hours duration to its length in
-   * hours.
-   *
-   * @param weeks the number of weeks
-   * @param days  the number of days
-   * @param hours the number of hours
-   * @return the duration in hours
-   */
-  protected static long inHours(int weeks, int days, int hours) {
-    return (24 * 7) * weeks + 24 * days + hours;
-  }
-
-  /**
-   * Formats an unpacked weeks-days-hours duration in the same {@code
-   * W:D:HH} format that {@link Duration#asWdh()} returns.
-   *
-   * @param weeks the number of weeks
-   * @param days  the number of days
-   * @param hours the number of hours
-   * @return formatted duration
-   * @throws IllegalArgumentException if any argument is negative
-   */
-  protected static String asWdh(int weeks, int days, int hours) {
-    return String.format("%d:%d:%02d", weeks, days, hours);
-  }
-
-  /**
-   * Ensures that the weeks, days and hours are all non-negative. Is
-   * factoring this out overkill? Or should we also factor out the {@code
-   * inHours < 0} check in the two unary constructors? Discuss.
-   *
-   * @param weeks the number of weeks
-   * @param days  the number of days
-   * @param hours the number of hours
-   * @throws IllegalArgumentException if any argument is negative
-   */
-  protected static void ensureWdh(int weeks, int days, int hours) {
-    if (weeks < 0 || days < 0 || hours < 0) {
-      throw new IllegalArgumentException("must be non-negative");
-    }
-  }
-
-  /**
-   * Returns the number of whole weeks in the given number of hours.
-   *
-   * @param inHours the total number of hours
-   * @return the number of weeks
-   * @throws ArithmeticException if the correct result cannot fit in an {@code
-   *                             int}.
-   */
-  protected static int weeksOf(long inHours) {
-    if (inHours / (24 * 7) > Integer.MAX_VALUE) {
-      throw new ArithmeticException("result cannot fit in type");
-    }
-
-    return (int) (inHours / (24 * 7));
-  }
-
-  /**
-   * Returns the number of whole hours in the given number of hours, less
-   * the number of whole weeks.
-   *
-   * @param inHours the total number of hours
-   * @return the number of remaining days
-   */
-  protected static int daysOf(long inHours) {
-    return (int) ((inHours / 24) % 7);
-  }
-
-  /**
-   * Returns the number of hours remaining after all full days are removed
-   * from the given number of hours.
-   *
-   * @param inHours the total number of hours
-   * @return the number of remaining hours
-   */
-  protected static int hoursOf(long inHours) {
-    return (int) (inHours % 24);
+    return fromSeconds(this.inSeconds() + that.inSeconds());
   }
 
   @Override
   public String format(String template) {
+    // A standard trick to implement the String version is to pass a
+    // basic accumulator implementation into your core accumulator method.
+    // Assuming your assignment has a basic implementation, it might look like this:
+    // return format(new cs3500.lec11.StringStringAccumulator(), template).stringValue();
+
+    // Alternatively, if you haven't written the Accumulator classes yet,
+    // you can build a quick temporary version using standard StringBuilder,
+    // but the final solution should use your required StringAccumulator method:
+    return format(new cs3500.lec11.StringStringAccumulator(), template).stringValue();
+  }
+
+  @Override
+  public <T extends StringAccumulator> T format(T acc, String template) {
     if (template == null) {
       throw new IllegalArgumentException("Template cannot be null");
     }
 
-    StringBuilder result = new StringBuilder();
-    long totalHours = this.inHours();
-
-    // Decompose the total hours into components
-    int w = weeksOf(totalHours);
-    int d = daysOf(totalHours);
-    int h = hoursOf(totalHours);
+    long totalSecs = this.inSeconds();
+    int h = hoursOf(totalSecs);
+    int m = minutesOf(totalSecs);
+    int s = secondsOf(totalSecs);
 
     int i = 0;
     while (i < template.length()) {
       char c = template.charAt(i);
 
       if (c == '%') {
-        // A '%' character must be followed by another character
+        // If '%' is the very last character of the template, it's malformed
         if (i + 1 >= template.length()) {
-          throw new IllegalArgumentException("Malformed template: trailing '%'");
+          throw new IllegalArgumentException("Malformed template: trailing % sign");
         }
 
         char specifier = template.charAt(i + 1);
         switch (specifier) {
           case 't':
-            result.append(totalHours);
-            break;
-          case 'w':
-            result.append(w);
-            break;
-          case 'W':
-            result.append(String.format("%02d", w));
-            break;
-          case 'd':
-            result.append(d);
-            break;
-          case 'D':
-            result.append(String.format("%02d", d));
+            acc.append(String.valueOf(totalSecs));
             break;
           case 'h':
-            result.append(h);
+            acc.append(String.valueOf(h));
             break;
           case 'H':
-            result.append(String.format("%02d", h));
+            acc.append(String.format("%02d", h));
+            break;
+          case 'm':
+            acc.append(String.valueOf(m));
+            break;
+          case 'M':
+            acc.append(String.format("%02d", m));
+            break;
+          case 's':
+            acc.append(String.valueOf(s));
+            break;
+          case 'S':
+            acc.append(String.format("%02d", s));
             break;
           case '%':
-            result.append('%');
+            acc.append("%");
             break;
           default:
             throw new IllegalArgumentException("Malformed template: unknown specifier %" + specifier);
         }
-        i += 2; // Skip both '%' and the specifier character
+        i += 2; // Skip past both the '%' and the specifier character
       } else {
-        result.append(c);
-        i++;
+        acc.append(String.valueOf(c));
+        i++; // Move to next character
       }
     }
 
-    return result.toString();
+    return acc;
   }
 }
